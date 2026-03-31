@@ -1,0 +1,4 @@
+valid_leave:
+  reason: Personal work
+  day_offset_start: 2
+  day_offset_end: 3

@@ -1,0 +1,7 @@
+valid:
+  username: JTG303
+  password: uzasusuta
+
+invalid:
+  username: admin
+  password: wrong
