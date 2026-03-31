@@ -1,0 +1,7 @@
+env: qa
+browser: 
+  name: chromium
+  headless: false
+urls:
+  qa: "http://hrms-staging.jtg.tools/hrms_dev/"
+  prod: "https://playwright.dev/"

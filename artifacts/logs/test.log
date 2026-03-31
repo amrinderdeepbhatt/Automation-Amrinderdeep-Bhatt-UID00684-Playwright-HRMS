@@ -1,0 +1,1148 @@
+2026-03-21 00:48:12,110 - INFO - framework - Clicking on text=Get started
+2026-03-21 00:48:35,027 - INFO - framework - Clicking on text=Get started
+2026-03-21 01:47:02,414 - INFO - framework - Clicking on text=Get started
+2026-03-27 01:48:28,051 - INFO - framework - Filling #username with admin
+2026-03-27 01:48:28,096 - INFO - framework - Filling #password with 1234
+2026-03-27 01:48:28,108 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:48:34,115 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:48:47,427 - INFO - framework - Filling #username with admin
+2026-03-27 01:48:47,462 - INFO - framework - Filling #password with 1234
+2026-03-27 01:48:47,478 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:48:53,497 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:48:59,503 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:49:07,142 - INFO - framework - Filling #username with admin
+2026-03-27 01:49:07,173 - INFO - framework - Filling #password with wrong
+2026-03-27 01:49:07,185 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:49:58,347 - INFO - framework - Filling #username with admin
+2026-03-27 01:49:58,381 - INFO - framework - Filling #password with 1234
+2026-03-27 01:49:58,396 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:50:04,409 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:50:09,785 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:50:12,742 - INFO - framework - Filling #username with admin
+2026-03-27 01:50:12,772 - INFO - framework - Filling #password with wrong
+2026-03-27 01:50:12,785 - INFO - framework - Clicking on #login-btn
+2026-03-27 01:50:18,802 - INFO - framework - Clicking on #login-btn
+2026-03-29 00:23:30,014 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:23:30,082 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:23:30,100 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:23:33,584 - INFO - framework - Filling #username with admin
+2026-03-29 00:23:33,614 - INFO - framework - Filling #password with wrong
+2026-03-29 00:23:33,627 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:23:35,570 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:23:35,598 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:23:35,611 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:23:46,127 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:23:46,159 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:23:46,171 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:23:46,747 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:36:47,841 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:36:47,882 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:36:47,898 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:36:50,321 - INFO - framework - Login successful
+2026-03-29 00:36:51,782 - INFO - framework - Filling #username with admin
+2026-03-29 00:36:51,811 - INFO - framework - Filling #password with wrong
+2026-03-29 00:36:51,823 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:36:52,804 - INFO - framework - Login successful
+2026-03-29 00:36:54,125 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:36:54,157 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:36:54,170 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:36:56,314 - INFO - framework - Login successful
+2026-03-29 00:36:56,314 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:36:58,264 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:37:29,869 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:37:29,899 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:37:29,912 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:37:31,868 - INFO - framework - Login successful
+2026-03-29 00:37:31,868 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:37:33,633 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:38:05,030 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:38:05,059 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:38:05,072 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:38:07,127 - INFO - framework - Login successful
+2026-03-29 00:38:07,127 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:38:08,799 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:38:54,601 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:38:54,629 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:38:54,644 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:38:56,939 - INFO - framework - Login successful
+2026-03-29 00:38:56,939 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:38:58,786 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:39:01,561 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:39:01,590 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:39:01,605 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:39:03,843 - INFO - framework - Login successful
+2026-03-29 00:39:03,843 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:39:05,515 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:39:08,052 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:39:08,083 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:39:08,096 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:39:10,399 - INFO - framework - Login successful
+2026-03-29 00:39:10,400 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:39:12,315 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:39:12,707 - ERROR - framework - Screenshot captured: artifacts/screenshots/leave_status_filter_failure.png
+2026-03-29 00:39:14,132 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:39:14,163 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:39:14,177 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:39:16,324 - INFO - framework - Login successful
+2026-03-29 00:39:16,324 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 00:39:18,072 - INFO - framework - Navigated to My Leave page
+2026-03-29 00:39:25,947 - INFO - framework - Filling #username with JTG301
+2026-03-29 00:39:25,977 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 00:39:26,014 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 00:39:27,580 - INFO - framework - Clicking on #main_parent_3
+2026-03-29 14:47:00,347 - INFO - framework - Filling #username with JTG301
+2026-03-29 14:47:00,400 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 14:47:00,415 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 14:47:02,780 - INFO - framework - Login successful
+2026-03-29 14:47:02,780 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 14:47:04,681 - INFO - framework - Navigated to My Leave page
+2026-03-29 14:59:39,177 - INFO - framework - Filling #username with JTG301
+2026-03-29 14:59:39,215 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 14:59:39,229 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 14:59:42,456 - INFO - framework - Login successful
+2026-03-29 14:59:42,456 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 14:59:45,133 - INFO - framework - Navigated to My Leave page
+2026-03-29 15:00:39,462 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:00:39,503 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:00:39,521 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:00:42,981 - INFO - framework - Login successful
+2026-03-29 15:00:42,981 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:00:46,026 - INFO - framework - Navigated to My Leave page
+2026-03-29 15:01:08,959 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:01:08,996 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:01:09,011 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:01:12,614 - INFO - framework - Login successful
+2026-03-29 15:01:12,614 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:01:14,933 - INFO - framework - Navigated to My Leave page
+2026-03-29 15:03:44,571 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:03:44,607 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:03:44,622 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:03:49,163 - INFO - framework - Login successful
+2026-03-29 15:03:49,163 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:03:51,108 - INFO - framework - Navigated to My Leave page
+2026-03-29 15:06:36,908 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:06:36,947 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:06:36,962 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:06:39,744 - INFO - framework - Login successful
+2026-03-29 15:06:51,610 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:06:51,648 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:06:51,662 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:06:54,016 - INFO - framework - Login successful
+2026-03-29 15:07:15,199 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:07:15,234 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:07:15,248 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:07:17,490 - INFO - framework - Login successful
+2026-03-29 15:07:50,144 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:07:50,180 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:07:50,197 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:07:52,590 - INFO - framework - Login successful
+2026-03-29 15:08:13,997 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:08:14,035 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:08:14,051 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:08:16,567 - INFO - framework - Login successful
+2026-03-29 15:08:16,567 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:08:18,001 - INFO - framework - Navigated to Leave request page
+2026-03-29 15:09:05,888 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:09:05,925 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:09:05,941 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:09:08,539 - INFO - framework - Login successful
+2026-03-29 15:09:08,539 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:09:09,862 - INFO - framework - Navigated to Leave request page
+2026-03-29 15:09:24,135 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:09:24,169 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:09:24,184 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:09:26,856 - INFO - framework - Login successful
+2026-03-29 15:09:26,856 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:09:28,164 - INFO - framework - Navigated to Leave request page
+2026-03-29 15:12:12,071 - INFO - framework - Filling #username with JTG301
+2026-03-29 15:12:12,108 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 15:12:12,124 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 15:12:14,511 - INFO - framework - Login successful
+2026-03-29 15:12:14,511 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 15:12:15,841 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:43:05,613 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:43:05,716 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:43:05,755 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:43:07,794 - INFO - framework - Login successful
+2026-03-29 16:43:07,794 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:43:09,116 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:45:09,855 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:45:09,950 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:45:09,989 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:45:12,211 - INFO - framework - Login successful
+2026-03-29 16:45:12,212 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:45:13,645 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:46:30,171 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:46:30,267 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:46:30,304 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:46:32,521 - INFO - framework - Login successful
+2026-03-29 16:46:32,521 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:46:33,803 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:47:16,541 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:47:16,645 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:47:16,686 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:47:18,772 - INFO - framework - Login successful
+2026-03-29 16:47:20,570 - INFO - framework - Filling #username with admin
+2026-03-29 16:47:20,640 - INFO - framework - Filling #password with wrong
+2026-03-29 16:47:20,679 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:47:21,768 - INFO - framework - Login successful
+2026-03-29 16:47:23,424 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:47:23,491 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:47:23,527 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:47:25,582 - INFO - framework - Login successful
+2026-03-29 16:47:25,583 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:47:26,860 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:48:09,055 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:48:09,127 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:48:09,159 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:48:11,249 - INFO - framework - Login successful
+2026-03-29 16:48:11,249 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:48:12,588 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:49:01,056 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:01,124 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:01,156 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:03,354 - INFO - framework - Login successful
+2026-03-29 16:49:03,354 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:49:05,241 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:49:08,266 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:08,330 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:08,362 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:10,378 - INFO - framework - Login successful
+2026-03-29 16:49:10,379 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:49:12,454 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:49:16,093 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:16,162 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:16,192 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:18,390 - INFO - framework - Login successful
+2026-03-29 16:49:18,390 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:49:20,374 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:49:21,246 - ERROR - framework - Screenshot captured: artifacts/screenshots/leave_status_filter_failure.png
+2026-03-29 16:49:23,123 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:23,208 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:23,246 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:25,323 - INFO - framework - Login successful
+2026-03-29 16:49:25,323 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:49:27,442 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:49:28,286 - ERROR - framework - Screenshot captured: artifacts/screenshots/cancel_leave_failure.png
+2026-03-29 16:49:29,852 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:29,929 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:29,960 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:31,519 - INFO - framework - Clicking on #main_parent_3
+2026-03-29 16:49:43,673 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:43,759 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:43,797 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:46,004 - INFO - framework - Login successful
+2026-03-29 16:49:47,702 - INFO - framework - Filling #username with admin
+2026-03-29 16:49:47,766 - INFO - framework - Filling #password with wrong
+2026-03-29 16:49:47,803 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:48,845 - INFO - framework - Login successful
+2026-03-29 16:49:50,508 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:49:50,580 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:49:50,617 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:49:52,613 - INFO - framework - Login successful
+2026-03-29 16:49:52,614 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:49:53,910 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:50:05,515 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:50:05,582 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:50:05,613 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:50:07,654 - INFO - framework - Login successful
+2026-03-29 16:50:07,655 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:50:09,034 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:50:57,472 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:50:57,545 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:50:57,577 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:50:59,898 - INFO - framework - Login successful
+2026-03-29 16:50:59,900 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:51:01,820 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:51:04,905 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:51:04,997 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:51:05,031 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:51:07,082 - INFO - framework - Login successful
+2026-03-29 16:51:07,082 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:51:09,109 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:51:12,742 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:51:12,810 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:51:12,840 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:51:15,007 - INFO - framework - Login successful
+2026-03-29 16:51:15,007 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:51:16,941 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:51:17,738 - ERROR - framework - Screenshot captured: artifacts/screenshots/leave_status_filter_failure.png
+2026-03-29 16:51:19,282 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:51:19,360 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:51:19,396 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:51:21,327 - INFO - framework - Login successful
+2026-03-29 16:51:21,328 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:51:23,248 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:51:24,062 - ERROR - framework - Screenshot captured: artifacts/screenshots/cancel_leave_failure.png
+2026-03-29 16:51:25,735 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:51:25,801 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:51:25,840 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:51:27,298 - INFO - framework - Clicking on #main_parent_3
+2026-03-29 16:52:54,626 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:52:54,717 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:52:54,756 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:52:56,857 - INFO - framework - Login successful
+2026-03-29 16:52:56,858 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:52:58,388 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:53:30,146 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:53:30,237 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:53:30,283 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:53:32,515 - INFO - framework - Login successful
+2026-03-29 16:53:32,515 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:53:34,061 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:54:53,216 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:54:53,314 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:54:53,356 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:54:55,572 - INFO - framework - Login successful
+2026-03-29 16:54:55,574 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:54:56,806 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:56:40,254 - INFO - framework - Filling #username with JTG301
+2026-03-29 16:56:40,353 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:56:40,391 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:56:42,465 - INFO - framework - Login successful
+2026-03-29 16:56:42,465 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:56:43,776 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:57:35,290 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:57:35,395 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:57:35,440 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:57:37,824 - INFO - framework - Login successful
+2026-03-29 16:57:37,824 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:57:39,117 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:58:04,702 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:58:04,804 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:58:04,855 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:58:06,924 - INFO - framework - Login successful
+2026-03-29 16:58:09,105 - INFO - framework - Filling #username with admin
+2026-03-29 16:58:09,176 - INFO - framework - Filling #password with wrong
+2026-03-29 16:58:09,223 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:58:10,247 - INFO - framework - Login successful
+2026-03-29 16:58:12,171 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:58:12,250 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:58:12,289 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:58:14,549 - INFO - framework - Login successful
+2026-03-29 16:58:14,549 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:58:16,080 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:58:30,573 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:58:30,669 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:58:30,722 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:58:32,954 - INFO - framework - Login successful
+2026-03-29 16:58:32,954 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:58:34,264 - INFO - framework - Navigated to Leave request page
+2026-03-29 16:58:55,008 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:58:55,080 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:58:55,120 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:58:57,184 - INFO - framework - Login successful
+2026-03-29 16:58:57,185 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:58:59,152 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:59:02,537 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:59:02,618 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:59:02,659 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:59:05,170 - INFO - framework - Login successful
+2026-03-29 16:59:05,170 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:59:07,167 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:59:11,560 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:59:11,631 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:59:11,673 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:59:13,747 - INFO - framework - Login successful
+2026-03-29 16:59:13,747 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:59:15,843 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:59:16,779 - ERROR - framework - Screenshot captured: artifacts/screenshots/leave_status_filter_failure.png
+2026-03-29 16:59:18,519 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:59:18,600 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:59:18,641 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:59:21,052 - INFO - framework - Login successful
+2026-03-29 16:59:21,053 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 16:59:22,933 - INFO - framework - Navigated to My Leave page
+2026-03-29 16:59:23,839 - ERROR - framework - Screenshot captured: artifacts/screenshots/cancel_leave_failure.png
+2026-03-29 16:59:25,569 - INFO - framework - Filling #username with JTG302
+2026-03-29 16:59:25,648 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 16:59:25,685 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 16:59:27,322 - INFO - framework - Clicking on #main_parent_3
+2026-03-29 17:00:43,338 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:00:43,450 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:00:43,501 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:00:45,915 - INFO - framework - Login successful
+2026-03-29 17:00:45,916 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:00:47,899 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:00:48,885 - ERROR - framework - Screenshot captured: artifacts/screenshots/leave_status_filter_failure.png
+2026-03-29 17:04:55,840 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:04:55,885 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:04:55,905 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:04:57,907 - INFO - framework - Login successful
+2026-03-29 17:04:57,907 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:04:59,606 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:11:05,190 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:11:05,227 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:11:05,245 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:11:07,847 - INFO - framework - Login successful
+2026-03-29 17:32:37,170 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:32:37,208 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:32:37,224 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:32:39,662 - INFO - framework - Login successful
+2026-03-29 17:32:39,662 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:32:42,053 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:32:58,188 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:32:58,226 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:32:58,243 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:00,908 - INFO - framework - Login successful
+2026-03-29 17:33:03,052 - INFO - framework - Filling #username with admin
+2026-03-29 17:33:03,081 - INFO - framework - Filling #password with wrong
+2026-03-29 17:33:03,096 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:04,041 - INFO - framework - Login successful
+2026-03-29 17:33:05,958 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:33:05,987 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:33:06,002 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:09,058 - INFO - framework - Login successful
+2026-03-29 17:33:09,058 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:33:10,613 - INFO - framework - Navigated to Leave request page
+2026-03-29 17:33:22,087 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:33:22,114 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:33:22,130 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:24,584 - INFO - framework - Login successful
+2026-03-29 17:33:24,585 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:33:25,988 - INFO - framework - Navigated to Leave request page
+2026-03-29 17:33:44,416 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:33:44,443 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:33:44,457 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:46,912 - INFO - framework - Login successful
+2026-03-29 17:33:46,913 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:33:48,771 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:33:52,000 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:33:52,028 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:33:52,043 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:33:54,175 - INFO - framework - Login successful
+2026-03-29 17:33:54,175 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:33:56,063 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:34:03,912 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:34:03,939 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:34:03,953 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:34:06,385 - INFO - framework - Login successful
+2026-03-29 17:34:06,385 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:34:08,089 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:34:10,750 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:34:10,777 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:34:10,792 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:34:12,514 - INFO - framework - Clicking on #main_parent_3
+2026-03-29 17:34:47,580 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:34:47,616 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:34:47,634 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:34:50,057 - INFO - framework - Login successful
+2026-03-29 17:34:50,057 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:34:51,924 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:35:10,527 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:35:10,564 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:35:10,582 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:35:12,987 - INFO - framework - Login successful
+2026-03-29 17:35:12,987 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:35:14,851 - INFO - framework - Navigated to My Leave page
+2026-03-29 17:35:27,543 - INFO - framework - Filling #username with JTG302
+2026-03-29 17:35:27,577 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 17:35:27,595 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 17:35:30,155 - INFO - framework - Login successful
+2026-03-29 17:35:30,155 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 17:35:32,012 - INFO - framework - Navigated to My Leave page
+2026-03-29 18:05:15,803 - ERROR - framework - Login failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at http://hrms-staging.jtg.tools/hrms_dev/
+Call log:
+  - navigating to "http://hrms-staging.jtg.tools/hrms_dev/", waiting until "load"
+
+2026-03-29 18:05:16,339 - ERROR - framework - Screenshot captured: artifacts/screenshots/login_failure.png
+2026-03-29 22:05:57,414 - ERROR - framework - Login failed: Page.goto: net::ERR_NAME_NOT_RESOLVED at http://hrms-staging.jtg.tools/hrms_dev/
+Call log:
+  - navigating to "http://hrms-staging.jtg.tools/hrms_dev/", waiting until "load"
+
+2026-03-29 22:05:57,952 - ERROR - framework - Screenshot captured: artifacts/screenshots/login_failure.png
+2026-03-29 22:06:47,417 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:06:47,581 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:06:47,648 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:06:52,119 - INFO - framework - Login successful
+2026-03-29 22:06:52,120 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:06:54,917 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:12:40,520 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:12:40,631 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:12:40,671 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:12:43,415 - INFO - framework - Login successful
+2026-03-29 22:12:45,904 - INFO - framework - Filling #username with admin
+2026-03-29 22:12:45,976 - INFO - framework - Filling #password with wrong
+2026-03-29 22:12:46,014 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:12:47,067 - INFO - framework - Login successful
+2026-03-29 22:12:50,577 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:12:50,686 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:12:50,728 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:12:53,282 - INFO - framework - Login successful
+2026-03-29 22:12:53,283 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:12:54,813 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:14:03,969 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:14:04,046 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:14:04,083 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:14:06,485 - INFO - framework - Login successful
+2026-03-29 22:14:06,485 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:14:07,884 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:18:11,222 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:18:11,324 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:18:11,365 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:18:14,214 - INFO - framework - Login successful
+2026-03-29 22:18:14,215 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:18:15,694 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:19:42,311 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:19:42,409 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:19:42,451 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:19:45,019 - INFO - framework - Login successful
+2026-03-29 22:19:45,019 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:19:46,544 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:20:38,426 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:20:38,527 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:20:38,563 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:20:41,110 - INFO - framework - Login successful
+2026-03-29 22:20:41,110 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:20:42,563 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:23:42,263 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:23:42,366 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:23:42,408 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:23:45,388 - INFO - framework - Login successful
+2026-03-29 22:23:45,388 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:23:46,910 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:26:04,600 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:26:04,711 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:26:04,762 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:26:07,495 - INFO - framework - Login successful
+2026-03-29 22:26:07,496 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:26:09,163 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:30:05,399 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:30:05,507 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:30:05,559 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:30:08,084 - INFO - framework - Login successful
+2026-03-29 22:30:08,084 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:30:09,521 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:31:05,405 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:31:05,501 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:31:05,548 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:31:07,827 - INFO - framework - Login successful
+2026-03-29 22:31:07,828 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:31:09,358 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:34:12,697 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:34:12,813 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:34:12,865 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:34:15,390 - INFO - framework - Login successful
+2026-03-29 22:34:15,392 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:34:16,948 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:36:30,621 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:36:30,732 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:36:30,782 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:36:33,043 - INFO - framework - Login successful
+2026-03-29 22:36:33,043 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:36:34,433 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:37:58,441 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:37:58,554 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:37:58,595 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:38:01,097 - INFO - framework - Login successful
+2026-03-29 22:38:01,097 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:38:02,567 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:41:30,166 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:41:30,259 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:41:30,296 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:41:32,660 - INFO - framework - Login successful
+2026-03-29 22:41:32,661 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:41:34,049 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:42:27,179 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:42:27,269 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:42:27,309 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:42:30,014 - INFO - framework - Login successful
+2026-03-29 22:42:30,015 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:42:31,338 - INFO - framework - Navigated to Leave request page
+2026-03-29 22:42:54,298 - INFO - framework - Filling #username with JTG302
+2026-03-29 22:42:54,399 - INFO - framework - Filling #password with uzasusuta
+2026-03-29 22:42:54,439 - INFO - framework - Clicking on #loginsubmit
+2026-03-29 22:42:56,977 - INFO - framework - Login successful
+2026-03-29 22:42:56,977 - INFO - framework - Clicking on #main_parent_4
+2026-03-29 22:42:58,379 - INFO - framework - Navigated to Leave request page
+2026-03-30 11:49:28,244 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:49:28,312 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:49:28,342 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:49:30,330 - INFO - framework - Login successful
+2026-03-30 11:49:31,472 - INFO - framework - Filling #username with admin
+2026-03-30 11:49:31,523 - INFO - framework - Filling #password with wrong
+2026-03-30 11:49:31,559 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:49:32,479 - INFO - framework - Login successful
+2026-03-30 11:49:33,393 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:49:33,452 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:49:33,479 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:49:35,126 - INFO - framework - Login successful
+2026-03-30 11:49:35,126 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 11:49:36,388 - INFO - framework - Navigated to Leave request page
+2026-03-30 11:50:09,763 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:50:09,836 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:50:09,850 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:50:11,736 - INFO - framework - Login successful
+2026-03-30 11:50:11,736 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 11:50:12,970 - INFO - framework - Navigated to Leave request page
+2026-03-30 11:50:49,721 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:50:49,792 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:50:49,818 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:50:51,588 - INFO - framework - Login successful
+2026-03-30 11:50:51,589 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 11:50:53,263 - INFO - framework - Navigated to My Leave page
+2026-03-30 11:50:55,500 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:50:55,538 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:50:55,561 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:50:57,175 - INFO - framework - Login successful
+2026-03-30 11:50:57,175 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 11:50:58,819 - INFO - framework - Navigated to My Leave page
+2026-03-30 11:51:05,959 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:51:06,008 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:51:06,032 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:51:07,606 - INFO - framework - Login successful
+2026-03-30 11:51:07,606 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 11:51:09,301 - INFO - framework - Navigated to My Leave page
+2026-03-30 11:51:17,085 - INFO - framework - Filling #username with JTG302
+2026-03-30 11:51:17,133 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 11:51:17,156 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 11:51:18,254 - INFO - framework - Clicking on #main_parent_3
+2026-03-30 16:18:27,408 - INFO - framework - Filling #username with JTG302
+2026-03-30 16:18:27,495 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 16:18:27,531 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 16:18:29,713 - INFO - framework - Login successful
+2026-03-30 16:18:31,268 - INFO - framework - Filling #username with admin
+2026-03-30 16:18:31,326 - INFO - framework - Filling #password with wrong
+2026-03-30 16:18:31,339 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 16:18:32,371 - INFO - framework - Login successful
+2026-03-30 16:18:33,334 - INFO - framework - Filling #username with JTG302
+2026-03-30 16:18:33,399 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 16:18:33,418 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 16:18:35,132 - INFO - framework - Login successful
+2026-03-30 16:18:35,133 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 16:18:36,373 - INFO - framework - Navigated to Leave request page
+2026-03-30 16:19:00,037 - INFO - framework - Filling #username with JTG302
+2026-03-30 16:19:00,086 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 16:19:00,105 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 16:19:02,086 - INFO - framework - Login successful
+2026-03-30 16:19:02,086 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 16:19:03,232 - INFO - framework - Navigated to Leave request page
+2026-03-30 16:25:08,486 - INFO - framework - Filling #username with JTG302
+2026-03-30 16:25:08,538 - INFO - framework - Filling #password with uzasusuta
+2026-03-30 16:25:08,555 - INFO - framework - Clicking on #loginsubmit
+2026-03-30 16:25:10,699 - INFO - framework - Login successful
+2026-03-30 16:25:10,699 - INFO - framework - Clicking on #main_parent_4
+2026-03-30 16:25:11,777 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:10:32,275 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:10:32,358 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:10:32,394 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:10:34,257 - INFO - framework - Login successful
+2026-03-31 17:10:35,350 - INFO - framework - Filling #username with admin
+2026-03-31 17:10:35,387 - INFO - framework - Filling #password with wrong
+2026-03-31 17:10:35,414 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:10:37,175 - INFO - framework - Login successful
+2026-03-31 17:10:38,226 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:10:38,280 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:10:38,306 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:10:40,138 - INFO - framework - Login successful
+2026-03-31 17:10:40,138 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:10:41,310 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:10:53,797 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:10:53,867 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:10:53,893 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:10:55,503 - INFO - framework - Login successful
+2026-03-31 17:10:55,503 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:10:56,639 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:11:00,566 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:11:00,635 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:11:00,661 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:11:02,804 - INFO - framework - Login successful
+2026-03-31 17:11:02,804 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:11:03,970 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:11:27,506 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:11:27,603 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:11:27,633 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:11:29,309 - INFO - framework - Login successful
+2026-03-31 17:11:29,309 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:11:31,038 - INFO - framework - Navigated to My Leave page
+2026-03-31 17:11:33,413 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:11:33,449 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:11:33,475 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:11:35,235 - INFO - framework - Login successful
+2026-03-31 17:11:35,235 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:11:36,886 - INFO - framework - Navigated to My Leave page
+2026-03-31 17:11:43,766 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:11:43,819 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:11:43,846 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:11:45,603 - INFO - framework - Login successful
+2026-03-31 17:11:45,603 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:11:47,180 - INFO - framework - Navigated to My Leave page
+2026-03-31 17:11:55,242 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:11:55,306 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:11:55,343 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:11:56,445 - INFO - framework - Clicking on #main_parent_3
+2026-03-31 17:13:15,510 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:13:15,572 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:13:15,597 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:13:17,633 - INFO - framework - Login successful
+2026-03-31 17:13:17,633 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:13:18,999 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:15:00,065 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:15:00,140 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:15:00,163 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:15:02,055 - INFO - framework - Login successful
+2026-03-31 17:15:02,055 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:15:03,109 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:15:51,389 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:15:51,453 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:15:51,506 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:15:53,892 - INFO - framework - Login successful
+2026-03-31 17:15:53,892 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:15:55,010 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:17:01,396 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:17:01,449 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:17:01,471 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:17:03,704 - INFO - framework - Login successful
+2026-03-31 17:17:03,706 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:17:04,880 - INFO - framework - Navigated to Leave request page
+2026-03-31 17:17:47,356 - INFO - framework - Filling #username with JTG302
+2026-03-31 17:17:47,427 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 17:17:47,456 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 17:17:49,121 - INFO - framework - Login successful
+2026-03-31 17:17:49,121 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 17:17:50,197 - INFO - framework - Navigated to Leave request page
+2026-03-31 18:12:50,645 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:12:50,715 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:12:50,782 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:12:52,441 - INFO - framework - Login successful
+2026-03-31 18:13:03,589 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:13:03,700 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:13:03,748 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:13:05,725 - INFO - framework - Login successful
+2026-03-31 18:13:06,931 - INFO - framework - Filling #username with admin
+2026-03-31 18:13:07,019 - INFO - framework - Filling #password with wrong
+2026-03-31 18:13:07,057 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:13:08,628 - INFO - framework - Login successful
+2026-03-31 18:13:10,147 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:13:10,248 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:13:10,315 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:13:12,456 - INFO - framework - Login successful
+2026-03-31 18:13:12,456 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:13:13,895 - INFO - framework - Navigated to Leave request page
+2026-03-31 18:13:38,556 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:13:38,622 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:13:38,657 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:13:40,337 - INFO - framework - Login successful
+2026-03-31 18:13:40,337 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:13:41,387 - INFO - framework - Navigated to Leave request page
+2026-03-31 18:13:45,471 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:13:45,524 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:13:45,543 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:13:47,164 - INFO - framework - Login successful
+2026-03-31 18:13:47,165 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:13:48,287 - INFO - framework - Navigated to Leave request page
+2026-03-31 18:13:59,964 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:14:00,028 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:14:00,057 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:14:01,554 - INFO - framework - Login successful
+2026-03-31 18:14:01,554 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:14:03,157 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:14:05,213 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:14:05,272 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:14:05,297 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:14:06,869 - INFO - framework - Login successful
+2026-03-31 18:14:06,869 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:14:08,489 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:15:16,887 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:15:16,997 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:15:17,020 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:15:18,877 - INFO - framework - Login successful
+2026-03-31 18:15:18,877 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:15:20,456 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:15:35,953 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:15:36,002 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:15:36,024 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:15:38,246 - INFO - framework - Login successful
+2026-03-31 18:15:38,246 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:15:39,728 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:15:44,565 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:15:44,616 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:15:44,633 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:15:46,664 - INFO - framework - Login successful
+2026-03-31 18:15:46,664 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:15:48,504 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:15:53,133 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:15:53,191 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:15:53,213 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:15:55,150 - INFO - framework - Login successful
+2026-03-31 18:15:55,150 - INFO - framework - Clicking on #main_parent_4
+2026-03-31 18:15:57,027 - INFO - framework - Navigated to My Leave page
+2026-03-31 18:26:35,154 - INFO - framework - Filling #username with JTG302(Wrong)
+2026-03-31 18:26:35,197 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:26:35,211 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:26:36,171 - INFO - framework - Login successful
+2026-03-31 18:27:37,329 - INFO - framework - Filling #username with JTG302(Wrong)
+2026-03-31 18:27:37,420 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:27:37,466 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:27:38,830 - INFO - framework - Login successful
+2026-03-31 18:28:07,143 - INFO - framework - Filling #username with JTG302(Wrong)
+2026-03-31 18:28:07,236 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:28:07,294 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:28:08,725 - INFO - framework - Login successful
+2026-03-31 18:31:45,827 - INFO - framework - Filling #username with JTG302(Wrong)
+2026-03-31 18:31:45,930 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:31:45,956 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:31:46,967 - INFO - framework - Login successful
+2026-03-31 18:32:13,195 - INFO - framework - Filling #username with JTG302(Wrong)
+2026-03-31 18:32:13,326 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:32:13,380 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:32:14,857 - INFO - framework - Login successful
+2026-03-31 18:33:51,761 - INFO - framework - Filling #username with JTG302
+2026-03-31 18:33:51,894 - INFO - framework - Filling #password with uzasusuta
+2026-03-31 18:33:51,920 - INFO - framework - Clicking on #loginsubmit
+2026-03-31 18:33:54,527 - INFO - framework - Login successful2026-04-01 00:03:55,352 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:03:55,473 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:04:19,278 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:04:19,378 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:04:32,091 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:04:32,218 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:04:55,783 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:04:56,208 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:06:04,241 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:06:04,707 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:06:31,381 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:06:32,316 - ERROR - framework - Test failed: steps_test_tc08_leave_status_applied_on_steps.py__test_leave_status_and_applied_on_date_to_filter_leaves
+2026-04-01 00:06:45,934 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:06:54,669 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:06:54,792 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:06:55,530 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:06:58,965 - INFO - framework - Clicking on text=My Leave
+2026-04-01 00:07:01,516 - INFO - framework - Clicking on search button
+2026-04-01 00:07:01,593 - INFO - framework - Inputting leave status and applied on date in column search
+2026-04-01 00:07:02,069 - INFO - framework - Selected date to input: 2026/03/26
+2026-04-01 00:07:02,905 - WARNING - framework - No data found for the given filter
+2026-04-01 00:19:29,960 - INFO - framework - Opening HRMS login page
+2026-04-01 00:19:43,000 - INFO - framework - Logging in with username JTG302
+2026-04-01 00:19:43,443 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:19:43,530 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:19:43,570 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:19:54,196 - INFO - framework - Verifying redirect to welcome page
+2026-04-01 00:19:54,196 - INFO - framework - Login successful
+2026-04-01 00:19:54,339 - INFO - framework - Opening HRMS login page for invalid login
+2026-04-01 00:20:07,247 - INFO - framework - Logging in with invalid username: admin
+2026-04-01 00:20:07,525 - INFO - framework - Filling #username with admin
+2026-04-01 00:20:07,599 - INFO - framework - Filling #password with wrong
+2026-04-01 00:20:07,632 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:20:08,662 - INFO - framework - Verifying invalid login error message
+2026-04-01 00:20:08,860 - INFO - framework - Logging into HRMS and opening leave request page
+2026-04-01 00:20:14,413 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:20:14,475 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:20:14,521 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:20:20,899 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:20:25,105 - INFO - framework - Navigated to Leave request page
+2026-04-01 00:20:25,106 - INFO - framework - Opening create leave request modal
+2026-04-01 00:20:25,455 - INFO - framework - Handling leave balance warning if shown
+2026-04-01 00:20:25,550 - INFO - framework - Filling leave form with valid date range and submitting
+2026-04-01 00:20:36,953 - WARNING - framework - Error text: Leave has already been applied for the above dates.
+2026-04-01 00:20:36,953 - WARNING - framework - Leave already applied for this date, trying for new date
+2026-04-01 00:20:49,364 - INFO - framework - Verifying leave request was submitted successfully
+2026-04-01 00:20:51,580 - INFO - framework - Logging in and navigating to Leave request page
+2026-04-01 00:20:57,925 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:20:57,977 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:20:58,021 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:21:06,625 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:21:13,567 - INFO - framework - Navigated to Leave request page
+2026-04-01 00:21:13,567 - INFO - framework - Opening create leave request modal
+2026-04-01 00:21:14,424 - INFO - framework - Handling leave balance warning if shown
+2026-04-01 00:21:14,472 - INFO - framework - Selecting leave type and invalid date range
+2026-04-01 00:21:16,558 - INFO - framework - Submitting leavae request with invalid range
+2026-04-01 00:21:17,528 - INFO - framework - Verifying date error
+2026-04-01 00:21:17,553 - INFO - framework - Validation error for invalid to-date displayed
+2026-04-01 00:21:17,745 - INFO - framework - Logging in and navigating to leave request
+2026-04-01 00:21:23,469 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:21:23,522 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:21:23,570 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:21:30,234 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:21:33,899 - INFO - framework - Navigated to Leave request page
+2026-04-01 00:21:33,901 - INFO - framework - Generated unique reason for leave TC05-accept-2433
+2026-04-01 00:21:34,326 - INFO - framework - Attept 1 to apply leave for status validation
+2026-04-01 00:21:46,685 - INFO - framework - Leave appears in My leave with Pending for approval status
+2026-04-01 00:21:46,853 - INFO - framework - Logging into HRMS and opening My leave page
+2026-04-01 00:21:52,984 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:21:53,052 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:21:53,088 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:22:05,449 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:22:08,901 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:22:08,902 - INFO - framework - Searching for keyword 'Sick' in Leave type filter
+2026-04-01 00:22:10,455 - INFO - framework - Logging in and navigating to My leave page
+2026-04-01 00:22:40,466 - ERROR - framework - Login failed: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://hrms-staging.jtg.tools/hrms_dev/", waiting until "load"
+
+2026-04-01 00:23:10,869 - ERROR - framework - Test failed: steps_test_tc07_from_to_date_filter_steps.py__test_from_to_date_filter_narrows_down_leave_records_in_selected_time_frame
+2026-04-01 00:23:11,038 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 00:23:18,229 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:23:18,303 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:23:18,998 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:23:24,618 - INFO - framework - Clicking on text=My Leave
+2026-04-01 00:23:31,726 - INFO - framework - Clicking on search button
+2026-04-01 00:23:31,790 - INFO - framework - Inputting leave status and applied on date in column search
+2026-04-01 00:23:32,179 - INFO - framework - Selected date to input: 2026/03/26
+2026-04-01 00:23:33,011 - WARNING - framework - No data found for the given filter
+2026-04-01 00:23:33,196 - INFO - framework - Logging into HRMS and navigating to my leave page
+2026-04-01 00:23:37,726 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:23:37,804 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:23:37,841 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:23:45,978 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:23:50,693 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:23:50,699 - INFO - framework - Attempting to cancel leave request
+2026-04-01 00:23:51,430 - ERROR - framework - Cancel leave request failed: No leave records found
+assert 0 > 0
+ +  where 0 = count()
+ +    where count = <Locator frame=<Frame name= url='http://hrms-staging.jtg.tools/hrms_dev/index.php/pendingleaves/all'> selector='#pendingleaves tbody tr'>.count
+2026-04-01 00:23:51,474 - ERROR - framework - Test failed: steps_test_tc09_cancel_leave_steps.py__test_cancelled_leave_request_appears_on_top_with_valid_status
+2026-04-01 00:23:51,688 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 00:24:01,363 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:24:01,419 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:24:01,457 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:24:08,107 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 00:24:11,408 - INFO - framework - Searching employee using UUID
+2026-04-01 00:46:37,381 - INFO - framework - Logging into HRMS and navigating to my leave page
+2026-04-01 00:46:47,353 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:46:47,407 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:46:47,441 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:47:04,141 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:47:09,455 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:47:09,461 - INFO - framework - Attempting to cancel leave request
+2026-04-01 00:47:10,113 - ERROR - framework - Cancel leave request failed: No leave records found
+assert 0 > 0
+ +  where 0 = count()
+ +    where count = <Locator frame=<Frame name= url='http://hrms-staging.jtg.tools/hrms_dev/index.php/pendingleaves/all'> selector='#pendingleaves tbody tr'>.count
+2026-04-01 00:47:10,218 - ERROR - framework - Test failed: steps_test_tc09_cancel_leave_steps.py__test_cancelled_leave_request_appears_on_top_with_valid_status
+2026-04-01 00:48:41,388 - INFO - framework - Logging into HRMS and navigating to my leave page
+2026-04-01 00:48:44,319 - INFO - framework - Filling #username with JTG302
+2026-04-01 00:48:44,377 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:48:44,418 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:48:50,847 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:48:53,539 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:48:53,541 - INFO - framework - Attempting to cancel leave request
+2026-04-01 00:48:54,853 - ERROR - framework - Cancel leave request failed: No leave records found
+assert 0 > 0
+ +  where 0 = count()
+ +    where count = <Locator frame=<Frame name= url='http://hrms-staging.jtg.tools/hrms_dev/index.php/pendingleaves/all'> selector='#pendingleaves tbody tr'>.count
+2026-04-01 00:48:54,971 - ERROR - framework - Test failed: steps_test_tc09_cancel_leave_steps.py__test_cancelled_leave_request_appears_on_top_with_valid_status
+2026-04-01 00:50:07,907 - INFO - framework - Logging into HRMS and navigating to my leave page
+2026-04-01 00:50:11,032 - INFO - framework - Filling #username with JTG303
+2026-04-01 00:50:11,154 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:50:11,186 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:50:17,586 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:50:20,396 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:50:20,399 - INFO - framework - Attempting to cancel leave request
+2026-04-01 00:50:28,271 - INFO - framework - Validating cancelled leave appears on top with status 'Cancelled'
+2026-04-01 00:52:35,504 - INFO - framework - Logging into HRMS and opening My leave page
+2026-04-01 00:52:40,208 - INFO - framework - Filling #username with JTG303
+2026-04-01 00:52:40,287 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:52:40,341 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:52:44,908 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 00:52:48,589 - INFO - framework - Navigated to My Leave page
+2026-04-01 00:52:48,589 - INFO - framework - Searching for keyword 'Sick' in Leave type filter
+2026-04-01 00:58:59,193 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 00:59:06,186 - INFO - framework - Filling #username with JTG303
+2026-04-01 00:59:06,262 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 00:59:06,311 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 00:59:17,752 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 00:59:25,266 - INFO - framework - Searching employee using UUID
+2026-04-01 00:59:25,670 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 00:59:25,734 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:04:52,299 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:04:55,143 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:04:55,238 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:04:55,282 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:04:58,926 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:05:01,017 - INFO - framework - Searching employee using UUID
+2026-04-01 01:05:01,384 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:05:01,451 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:14:01,320 - INFO - framework - Opening HRMS login page
+2026-04-01 01:15:46,306 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:15:49,737 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:15:49,830 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:15:49,903 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:15:54,559 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:15:56,413 - INFO - framework - Searching employee using UUID
+2026-04-01 01:15:57,272 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:15:57,334 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:17:24,161 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:17:27,086 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:17:27,153 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:17:27,186 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:17:30,803 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:17:32,720 - INFO - framework - Searching employee using UUID
+2026-04-01 01:17:33,114 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:17:33,174 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:20:33,058 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:20:35,656 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:20:35,714 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:20:35,732 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:20:39,364 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:20:41,276 - INFO - framework - Searching employee using UUID
+2026-04-01 01:20:41,535 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:20:41,589 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:25:02,362 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:25:04,320 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:25:04,366 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:25:04,386 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:25:06,955 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:25:08,714 - INFO - framework - Searching employee using UUID
+2026-04-01 01:25:38,990 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:27:11,356 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:27:15,590 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:27:15,646 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:27:15,663 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:27:17,738 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:27:19,330 - INFO - framework - Searching employee using UUID
+2026-04-01 01:27:19,642 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:27:19,705 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:27:58,923 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:28:01,045 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:28:01,102 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:28:01,122 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:28:03,151 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:28:04,966 - INFO - framework - Searching employee using UUID
+2026-04-01 01:28:35,290 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:29:00,226 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:29:02,997 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:29:03,054 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:29:03,075 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:29:05,178 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:29:07,105 - INFO - framework - Searching employee using UUID
+2026-04-01 01:29:37,415 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:30:40,355 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:30:42,220 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:30:42,351 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:30:42,376 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:30:44,671 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:30:46,476 - INFO - framework - Searching employee using UUID
+2026-04-01 01:30:46,840 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:30:46,903 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:31:15,312 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:31:16,943 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:31:17,063 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:31:17,091 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:31:20,054 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:31:21,439 - INFO - framework - Searching employee using UUID
+2026-04-01 01:31:21,809 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:31:21,885 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:33:35,046 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:33:36,835 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:33:36,959 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:33:36,990 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:33:39,179 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:33:40,789 - INFO - framework - Searching employee using UUID
+2026-04-01 01:33:41,185 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:33:41,261 - ERROR - framework - [DEBUG] Page fixture found: <class 'playwright.sync_api._generated.Page'>
+2026-04-01 01:33:41,688 - ERROR - framework - Screenshot captures: artifacts/screenshots/failure_steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid_2026-04-01_01-33-41.png
+2026-04-01 01:33:41,688 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:39:15,327 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:41:57,211 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:42:07,721 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:42:07,827 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:42:07,876 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:42:11,539 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:42:13,093 - INFO - framework - Searching employee using UUID
+2026-04-01 01:42:13,578 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:42:13,688 - ERROR - framework - [DEBUG] Page fixture found: <class 'playwright.sync_api._generated.Page'>
+2026-04-01 01:42:14,553 - ERROR - framework - Screenshot captures: artifacts/screenshots/failure_steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid_2026-04-01_01-42-13.png
+2026-04-01 01:42:14,553 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:42:34,817 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:42:36,991 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:42:37,099 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:42:37,126 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:42:40,261 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:42:42,199 - INFO - framework - Searching employee using UUID
+2026-04-01 01:42:42,637 - ERROR - framework - Employee not found: Employee with UUID: Incorrect not found
+assert False
+2026-04-01 01:42:42,745 - ERROR - framework - [DEBUG] Page fixture found: <class 'playwright.sync_api._generated.Page'>
+2026-04-01 01:42:43,152 - ERROR - framework - Screenshot captures: artifacts/screenshots/failure_steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid_2026-04-01_01-42-42.png
+2026-04-01 01:42:43,153 - ERROR - framework - Test failed: steps_test_tc10_search_employee_record_steps.py__test_user_can_locate_a_specific_employee_using_employee_uid
+2026-04-01 01:46:51,376 - INFO - framework - Opening HRMS login page
+2026-04-01 01:46:53,198 - INFO - framework - Logging in with username JTG303
+2026-04-01 01:46:53,488 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:46:53,596 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:46:53,663 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:46:56,946 - INFO - framework - Verifying redirect to welcome page
+2026-04-01 01:46:56,947 - INFO - framework - Login successful
+2026-04-01 01:46:57,158 - INFO - framework - Opening HRMS login page for invalid login
+2026-04-01 01:46:59,314 - INFO - framework - Logging in with invalid username: admin
+2026-04-01 01:46:59,569 - INFO - framework - Filling #username with admin
+2026-04-01 01:46:59,662 - INFO - framework - Filling #password with wrong
+2026-04-01 01:46:59,715 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:47:00,982 - INFO - framework - Verifying invalid login error message
+2026-04-01 01:47:01,222 - INFO - framework - Logging into HRMS and opening leave request page
+2026-04-01 01:47:02,733 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:47:02,902 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:47:02,990 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:47:07,268 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:47:09,023 - INFO - framework - Navigated to Leave request page
+2026-04-01 01:47:09,024 - INFO - framework - Opening create leave request modal
+2026-04-01 01:47:09,400 - INFO - framework - Handling leave balance warning if shown
+2026-04-01 01:47:09,552 - INFO - framework - Filling leave form with valid date range and submitting
+2026-04-01 01:47:20,901 - INFO - framework - Verifying leave request was submitted successfully
+2026-04-01 01:47:21,336 - INFO - framework - Logging in and navigating to Leave request page
+2026-04-01 01:47:22,849 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:47:22,955 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:47:23,012 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:47:25,898 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:47:27,446 - INFO - framework - Navigated to Leave request page
+2026-04-01 01:47:27,447 - INFO - framework - Opening create leave request modal
+2026-04-01 01:47:27,835 - INFO - framework - Handling leave balance warning if shown
+2026-04-01 01:47:27,937 - INFO - framework - Selecting leave type and invalid date range
+2026-04-01 01:47:30,460 - INFO - framework - Submitting leavae request with invalid range
+2026-04-01 01:47:31,607 - INFO - framework - Verifying date error
+2026-04-01 01:47:31,642 - INFO - framework - Validation error for invalid to-date displayed
+2026-04-01 01:47:31,853 - INFO - framework - Logging in and navigating to leave request
+2026-04-01 01:47:33,487 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:47:33,546 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:47:33,602 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:47:37,250 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:47:38,755 - INFO - framework - Navigated to Leave request page
+2026-04-01 01:47:38,757 - INFO - framework - Generated unique reason for leave TC05-Democrat-2933
+2026-04-01 01:47:39,239 - INFO - framework - Attept 1 to apply leave for status validation
+2026-04-01 01:47:50,877 - INFO - framework - Leave appears in My leave with Pending for approval status
+2026-04-01 01:47:51,124 - INFO - framework - Logging into HRMS and opening My leave page
+2026-04-01 01:47:53,792 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:47:53,864 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:47:53,912 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:47:56,619 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:47:59,403 - INFO - framework - Navigated to My Leave page
+2026-04-01 01:47:59,403 - INFO - framework - Searching for keyword 'Sick' in Leave type filter
+2026-04-01 01:48:01,017 - INFO - framework - Logging in and navigating to My leave page
+2026-04-01 01:48:02,549 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:48:02,625 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:48:02,695 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:48:06,459 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:48:08,724 - INFO - framework - Navigated to My Leave page
+2026-04-01 01:48:08,725 - INFO - framework - Filtering leave records by from and to dates
+2026-04-01 01:48:10,985 - INFO - framework - Leave records filtered correctly in selected timeframe
+2026-04-01 01:48:11,191 - INFO - framework - Logging in and navigating to my leave page
+2026-04-01 01:48:12,846 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:48:12,917 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:48:13,837 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:48:15,203 - INFO - framework - Clicking on text=My Leave
+2026-04-01 01:48:17,444 - INFO - framework - Clicking on search button
+2026-04-01 01:48:17,524 - INFO - framework - Inputting leave status and applied on date in column search
+2026-04-01 01:48:17,952 - INFO - framework - Selected date to input: 2026/03/26
+2026-04-01 01:48:18,292 - WARNING - framework - No data found for the given filter
+2026-04-01 01:48:18,531 - INFO - framework - Logging into HRMS and navigating to my leave page
+2026-04-01 01:48:20,525 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:48:20,596 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:48:20,632 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:48:23,099 - INFO - framework - Clicking on #main_parent_4
+2026-04-01 01:48:25,275 - INFO - framework - Navigated to My Leave page
+2026-04-01 01:48:25,279 - INFO - framework - Attempting to cancel leave request
+2026-04-01 01:48:33,348 - INFO - framework - Validating cancelled leave appears on top with status 'Cancelled'
+2026-04-01 01:48:33,552 - INFO - framework - Logging in and navigating to HR section
+2026-04-01 01:48:35,077 - INFO - framework - Filling #username with JTG303
+2026-04-01 01:48:35,193 - INFO - framework - Filling #password with uzasusuta
+2026-04-01 01:48:35,252 - INFO - framework - Clicking on #loginsubmit
+2026-04-01 01:48:37,148 - INFO - framework - Clicking on #main_parent_3
+2026-04-01 01:48:38,647 - INFO - framework - Searching employee using UUID
