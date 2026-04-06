@@ -1,3 +1,5 @@
+"""Shared pytest fixtures and failure reporting hooks for UI tests."""
+
 import pytest
 import os
 from config.config_loader import ConfigLoader
@@ -6,19 +8,22 @@ import datetime
 from utils.logger import get_logger
 from utils.test_context import context
 
-print("✅ conftest loaded")
+pytest_plugins = ("steps.test_shared_steps",)
 
 @pytest.fixture(scope="session")
 def config():
+    """Load environment-specific framework configuration once per run."""
     env = os.getenv("TEST_ENV")
     return ConfigLoader(env=env)
 
 @pytest.fixture(scope="session")
 def logger():
+    """Expose the framework logger as a session-level fixture."""
     return get_logger()
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
+    """Capture a screenshot and log details whenever a test fails."""
     outcome = yield
     report = outcome.get_result()
     
@@ -36,4 +41,3 @@ def pytest_runtest_makereport(item):
             except Exception as e:
                 logger.error(f"Screenshot failed: {str(e)}")
         logger.error(f"Test failed: {test_name}")
-

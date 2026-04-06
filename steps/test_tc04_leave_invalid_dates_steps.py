@@ -1,29 +1,24 @@
-from datetime import datetime, timedelta
-from pathlib import Path
+"""BDD steps for validating invalid leave date ranges."""
 
-import yaml
+from datetime import datetime, timedelta
+
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
-from pytest_bdd import given, scenarios, then, when
-from pages.base_page import BasePage
+from pytest_bdd import parsers, scenarios, then, when
 from utils.logger import get_logger
-from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 scenarios("../features/tc04_leave_invalid_dates.feature")
 
 logger = get_logger()
 
-def _load_valid_creds():
-    data_path = Path("data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"]
-
-
 def _leave_dialog(page):
+    """Return the leave request form locator."""
     return page.locator("#leaverequestform").first
 
 
 def _click_ok_if_alert_visible(page, timeout_ms=1000):
+    """Dismiss alert popup when it is visible."""
     ok_button = page.locator("#popup_ok").first
     try:
         ok_button.wait_for(state="visible", timeout=timeout_ms)
@@ -35,6 +30,7 @@ def _click_ok_if_alert_visible(page, timeout_ms=1000):
 
 
 def _pick_date_from_calendar(page, input_locator, target_date):
+    """Pick a date from the datepicker, with fallback selection."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div").first
@@ -69,6 +65,7 @@ def _pick_date_from_calendar(page, input_locator, target_date):
 
 
 def _pick_date_less_than(page, input_locator, target_date, max_day):
+    """Pick a date strictly less than the provided day value."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div").first
@@ -102,7 +99,6 @@ def _pick_date_less_than(page, input_locator, target_date, max_day):
 
     if candidate_index == -1:
         datepicker.locator(".ui-datepicker-prev").click()
-        datepicker.wait_for_timeout(200)
         selectable_days = datepicker.locator(
             "xpath=.//td[@data-handler='selectDay' and not(contains(@class,'ui-datepicker-other-month'))]/a"
         )
@@ -115,34 +111,9 @@ def _pick_date_less_than(page, input_locator, target_date, max_day):
     selectable_days.nth(candidate_index).click()
 
 
-@given("user logs into HRMS and opens Leave Request page for invalid date validation")
-
-def open_leave_page(page, config):
-    creds = _load_valid_creds()
-    context.page = page
-    base_page = BasePage(page)
-    logger.info("Logging in and navigating to Leave request page")
-    base_page.login(config.get_url(), creds["username"], creds["password"])
-    base_page.navigate_to_leave_request()
-    
-@when("user opens create leave request modal for invalid date validation")
-def open_leave_modal(page):
-    logger.info("Opening create leave request modal")
-    page.locator("td.fc-day.fc-future:visible").first.click()
-    _leave_dialog(page).wait_for(state="visible", timeout=10000)
-
-
-@when("user handles leave balance warning for invalid date validation if shown")
-def handle_warning(page):
-    logger.info("Handling leave balance warning if shown")
-    _click_ok_if_alert_visible(page, timeout_ms=3000)
-
-
-@when("user selects leave type and enters invalid date range where to date is less than from date")
-def fill_invalid_dates(page):
-    logger.info("Selecting leave type and invalid date range")
+def _select_leave_type_for_invalid_validation(page):
+    """Select leave type for invalid date validation flow."""
     dialog = _leave_dialog(page)
-
     native_leave_type = dialog.locator("#leavetypeid").first
     if native_leave_type.count():
         native_leave_type.select_option(label="Annual Leave")
@@ -154,11 +125,38 @@ def fill_invalid_dates(page):
 
     dialog.locator("#reason").first.fill("Invalid range validation")
 
-    from_date = datetime.now() + timedelta(days=12)
-    to_date = datetime.now() + timedelta(days=5)
 
-    from_input = dialog.locator("#from_date").first
-    to_input = dialog.locator("#to_date").first
+@when("user opens create leave request modal from Apply Leave")
+def open_leave_modal(page):
+    """Open the leave modal for invalid date checks."""
+    logger.info("Opening create leave request modal")
+    page.locator("td.fc-day.fc-future:visible").first.click()
+    _leave_dialog(page).wait_for(state="visible", timeout=10000)
+
+
+@when("user handles leave balance warning if shown")
+def handle_warning(page):
+    """Handle balance warning popup if shown."""
+    logger.info("Handling leave balance warning if shown")
+    _click_ok_if_alert_visible(page, timeout_ms=3000)
+
+
+@when("user selects leave type for invalid date validation")
+def select_leave_type_for_invalid_dates(page):
+    """Select leave type and reason for invalid date validation."""
+    logger.info("Selecting leave type for invalid date validation")
+    _select_leave_type_for_invalid_validation(page)
+
+
+@when(parsers.parse("user enters leave dates with from offset {from_offset:d} and to offset {to_offset:d}"))
+def fill_invalid_dates(page, from_offset, to_offset):
+    """Fill from/to dates using parameterized offsets for validation checks."""
+    logger.info(f"Entering leave dates with offsets from={from_offset}, to={to_offset}")
+    from_date = datetime.now() + timedelta(days=from_offset)
+    to_date = datetime.now() + timedelta(days=to_offset)
+
+    from_input = _leave_dialog(page).locator("#from_date").first
+    to_input = _leave_dialog(page).locator("#to_date").first
 
     selected_from_day = _pick_date_from_calendar(page, from_input, from_date)
     _pick_date_less_than(page, to_input, to_date, max_day=selected_from_day)
@@ -166,12 +164,14 @@ def fill_invalid_dates(page):
 
 @when("user submits leave request with invalid date range")
 def submit_invalid_form(page):
+    """Submit the leave form with invalid dates."""
     logger.info("Submitting leavae request with invalid range")
     _leave_dialog(page).locator("#submitbutton").click()
 
 
 @then("user should see invalid to-date validation error")
 def verify_to_date_error(page):
+    """Assert the expected to-date validation error appears."""
     logger.info("Verifying date error")
     error = page.locator("#errors-to_date").first
     error.wait_for(state="visible", timeout=10000)

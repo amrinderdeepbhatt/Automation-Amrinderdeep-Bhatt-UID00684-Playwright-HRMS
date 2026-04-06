@@ -2,9 +2,12 @@
 Feature: Leave Management - TC04 Invalid Date Range
 
   Scenario: System blocks leave submission when To date is less than From date
-    Given user logs into HRMS and opens Leave Request page for invalid date validation
-    When user opens create leave request modal for invalid date validation
-    And user handles leave balance warning for invalid date validation if shown
-    And user selects leave type and enters invalid date range where to date is less than from date
+    Given user opens the HRMS login page
+    When user logs in with valid credentials from test data
+    And user opens Leave Request page
+    And user opens create leave request modal from Apply Leave
+    And user handles leave balance warning if shown
+    And user selects leave type for invalid date validation
+    And user enters leave dates with from offset 12 and to offset 5
     And user submits leave request with invalid date range
     Then user should see invalid to-date validation error

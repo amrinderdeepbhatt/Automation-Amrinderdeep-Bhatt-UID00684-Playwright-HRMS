@@ -1,7 +1,8 @@
 valid:
-  username: JTG303
-  password: uzasusuta
+  username_env: HRMS_VALID_USERNAME
+  password_env: HRMS_VALID_PASSWORD
 
 invalid:
-  username: admin
-  password: wrong
+  username_env: HRMS_INVALID_USERNAME
+  password_env: HRMS_INVALID_PASSWORD
+  

@@ -1,23 +1,19 @@
+"""BDD steps for filtering leaves by status and applied date."""
+
 import yaml
-from pytest_bdd import given, when, then, scenarios
+from pytest_bdd import when, then, scenarios
 from pathlib import Path
 from datetime import datetime
 from utils.logger import get_logger
-from pages.base_page import BasePage
-from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 scenarios("../features/tc08_leave_status_filter.feature")
 
 logger = get_logger()
 
-def _load_valid_creds():
-    data_path = Path("./data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"]
-
-
 def _load_leave_data():
+    """Load leave status filter value from YAML."""
     data_path = Path("./data/leave_filter.yaml")
     with data_path.open("r", encoding="utf-8") as stream:
         data = yaml.safe_load(stream)
@@ -25,6 +21,7 @@ def _load_leave_data():
 
 
 def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
+    """Select a concrete date using month/year dropdowns."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div:visible").last
@@ -65,32 +62,9 @@ def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
     return int(target_day)
 
 
-@given("user logs into HRMS and navigates to My Leave page")
-def my_leave_page(page, config):
-    creds = _load_valid_creds()
-    context.page = page
-    logger.info("Logging in and navigating to my leave page")
-    base_page = BasePage(page)
-    page.goto(config.get_url())
-    
-    base_page.fill("#username", creds["username"])
-    base_page.fill("#password", creds["password"])
-    page.locator("#loginsubmit").click()
-
-    base_page.click("#main_parent_4")
-    base_page.click("text=My Leave")
-
-    page.wait_for_load_state("networkidle")
-
-
-@when("user clicks on search button")
-def click_search_button(page):
-    logger.info("Clicking on search button")
-    page.locator("input.togglesearch").first.click()
-
-
-@when("inputs leave status and applied on in column search")
+@when("user inputs leave status and applied on in column search")
 def input_filter_data(page, context):
+    """Populate leave status and applied-on date filters."""
     logger.info("Inputting leave status and applied on date in column search")
     page.fill("#leavetype", _load_leave_data())
 
@@ -104,6 +78,7 @@ def input_filter_data(page, context):
 
 @then("leaves should be filtered by leave status and applied on date")
 def validate_filter(page, context):
+    """Validate each result row matches selected status and date."""
 
     page.wait_for_load_state("networkidle")
 

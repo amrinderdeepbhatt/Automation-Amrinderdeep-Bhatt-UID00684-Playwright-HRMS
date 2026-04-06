@@ -1,9 +1,12 @@
+"""Logging helper that writes rotating test logs to artifacts."""
+
 import logging
 from logging.handlers import RotatingFileHandler
 import os
 
 
 def get_logger(name="framework"):
+    """Return a configured logger instance for the framework."""
     log_dir = "artifacts/logs"
     os.makedirs(log_dir, exist_ok=True)
 

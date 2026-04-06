@@ -1,0 +1,8 @@
+pytest
+pytest-bdd
+pytest-playwright
+playwright
+python-dotenv
+PyYAML
+requests
+Faker

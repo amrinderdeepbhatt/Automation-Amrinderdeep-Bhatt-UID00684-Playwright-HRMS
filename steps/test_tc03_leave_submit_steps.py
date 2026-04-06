@@ -1,44 +1,51 @@
+"""BDD steps for submitting a valid leave request."""
+
 from datetime import datetime, timedelta
 from pathlib import Path
 
 import yaml
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
-from pytest_bdd import given, scenarios, then, when
+from pytest_bdd import scenarios, then, when
 from utils.test_data_factory import TestDataFactory
-from pages.base_page import BasePage
 
 from utils.logger import get_logger
 from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 logger = get_logger()
 
 scenarios("../features/tc03_leave_submit.feature")
 
 
-def _load_valid_creds():
-    data_path = Path("data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"]
-
-
 def _load_leave_data():
+    """Read leave details used for form submission."""
     data_path = Path("data/leave.yaml")
     with data_path.open("r", encoding="utf-8") as stream:
         data = yaml.safe_load(stream)
     return data["valid_leave"]
 
+def _handle_repeated_alerts(page, attempts=5):
+    """Clear repeat alerts that can block form actions."""
+    for _ in range(attempts):
+        clicked = _click_ok_if_alert_visible(page, timeout_ms=3000)
+        if not clicked:
+            break
+        page.wait_for_timeout(500)
 
 def _build_random_leave_window():
+    """Generate a random valid date window for leave."""
     factory = TestDataFactory(seed=None)
     return factory.leave_date_offsets(min_start=5, max_start=365, min_duration=1, max_duration=5)
 
 
 def _date(offset):
+    """Return current datetime shifted by day offset."""
     return datetime.now() + timedelta(days=offset)
 
 
 def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
+    """Pick a date from the calendar widget with optional lower bound."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div").first
@@ -98,10 +105,12 @@ def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
 
 
 def _leave_dialog(page):
+    """Return the leave request dialog locator."""
     return page.locator("#leaverequestform").first
 
 
 def _click_ok_if_alert_visible(page, timeout_ms=1000):
+    """Dismiss popup alert if it appears within timeout."""
     ok_button = page.locator("#popup_ok").first
     try:
         ok_button.wait_for(state="visible", timeout=timeout_ms)
@@ -111,28 +120,9 @@ def _click_ok_if_alert_visible(page, timeout_ms=1000):
     ok_button.click()
     return True
 
-
-def _handle_repeated_alerts(page, attempts=3):
-    for _ in range(attempts):
-        clicked = _click_ok_if_alert_visible(page, timeout_ms=3000)
-        if not clicked:
-            break
-        page.wait_for_timeout(500)
-
-
-@given("user logs into HRMS and opens Leave Request page")
-
-def user_on_leave_request(page, config):
-    creds = _load_valid_creds()
-    context.page = page
-    base_page = BasePage(page)
-    logger.info("Logging into HRMS and opening leave request page")
-    base_page.login(config.get_url(), creds["username"], creds["password"])
-    base_page.navigate_to_leave_request()
-
-
 @when("user opens create leave request modal from Apply Leave")
 def open_leave_modal(page):
+    """Open the create leave request modal from calendar."""
     logger.info("Opening create leave request modal")
     page.locator("td.fc-day.fc-future:visible").first.click()
     _leave_dialog(page).wait_for(state="visible", timeout=10000)
@@ -140,11 +130,12 @@ def open_leave_modal(page):
 
 @when("user handles leave balance warning if shown")
 def handle_first_warning(page):
+    """Handle initial leave-balance warning if present."""
     logger.info("Handling leave balance warning if shown")
     _click_ok_if_alert_visible(page)
 
 
-@when("user enters leave details with valid date range and submits form")
+@when("user enters leave details with valid date range")
 def fill_leave_form(page):
     leave = _load_leave_data()
     dialog = _leave_dialog(page)
@@ -203,12 +194,11 @@ def fill_leave_form(page):
         logger.error("Failed to find a valid leave date range after multiple attempts")
         raise AssertionError("Failed to find a valid leave date range after multiple attempts.")
 
-
-@then("leave request should be submitted successfully")
+@then("user should see leave request submission success")
 def verify_leave_request_submitted(page):
+    """Verify successful leave submission message and redirect."""
     logger.info("Verifying leave request was submitted successfully")
     page.wait_for_url("**/pendingleaves")
     success = page.get_by_text("Leave request added successfully.", exact=False).first
     success.wait_for(state="visible", timeout=10000)
     assert success.is_visible(), "Leave request success message not visible"
-

@@ -1,30 +1,27 @@
+"""BDD steps for verifying status of an applied leave."""
+
 from datetime import datetime, timedelta
 from pathlib import Path
 
 import yaml
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
-from pytest_bdd import given, scenarios, then, when
-from pages.base_page import BasePage
+from pytest_bdd import scenarios, then, when
 from utils.test_data_factory import TestDataFactory
 from utils.logger import get_logger
-from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 scenarios("../features/tc05_my_leave_status.feature")
 
 logger = get_logger()
 
-def _load_valid_creds():
-    data_path = Path("data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"]
-
-
 def _leave_dialog(page):
+    """Return the leave request dialog locator."""
     return page.locator("#leaverequestform").first
 
 
 def _click_ok_if_alert_visible(page, timeout_ms=1000):
+    """Dismiss popup alert when visible."""
     ok_button = page.locator("#popup_ok").first
     try:
         ok_button.wait_for(state="visible", timeout=timeout_ms)
@@ -36,6 +33,7 @@ def _click_ok_if_alert_visible(page, timeout_ms=1000):
 
 
 def _handle_repeated_alerts(page, attempts=5):
+    """Clear repeat alerts that can block form actions."""
     for _ in range(attempts):
         clicked = _click_ok_if_alert_visible(page, timeout_ms=3000)
         if not clicked:
@@ -43,20 +41,24 @@ def _handle_repeated_alerts(page, attempts=5):
         page.wait_for_timeout(500)
 
 def _build_random_leave_window():
+    """Generate a random valid leave date window."""
     factory = TestDataFactory(seed=None)
-    return factory.leave_date_offsets(min_start=5, max_start=365, min_duration=1, max_duration=5)
+    return factory.leave_date_offsets(min_start=5, max_start=365, min_duration=1, max_duration=2)
 
 def _load_leave_data():
+    """Load valid leave payload from test data."""
     data_path = Path("data/leave.yaml")
     with data_path.open("r", encoding="utf-8") as stream:
         data = yaml.safe_load(stream)
     return data["valid_leave"]
 
 def _date(offset):
+    """Return datetime shifted by day offset."""
     return datetime.now() + timedelta(days=offset)
 
 
 def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
+    """Pick a date from datepicker while honoring optional minimum day."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div").first
@@ -101,7 +103,6 @@ def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
 
         if not found_greater_day:
             datepicker.locator(".ui-datepicker-next").click()
-            datepicker.wait_for_timeout(200)
             selectable_days = datepicker.locator(
                 "xpath=.//td[@data-handler='selectDay' and not(contains(@class,'ui-datepicker-other-month'))]/a"
             )
@@ -115,25 +116,21 @@ def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
     return chosen_day
 
 
-@given("user logs into HRMS and opens Leave Request page for status validation", target_fixture="leave_ctx")
-def open_leave_page(page, config):
-    context.page = page
-    logger.info("Logging in and navigating to leave request")
-    creds = _load_valid_creds()
-    base_page = BasePage(page)
-    base_page.login(config.get_url(), creds["username"], creds["password"])
-    base_page.navigate_to_leave_request()
-    factory = TestDataFactory(seed=None)
-    unique_reason = f"TC05-{factory.keyword()}-{factory.faker.random_int(min=1000, max=9999)}"
-    logger.info(f"Generated unique reason for leave {unique_reason}")
-    return {"reason": unique_reason}
-
-
-@when("user applies a valid leave request for status validation")
-def apply_leave_for_status(page, leave_ctx):
-    leave = _load_leave_data()
+@when("user opens create leave request modal for status validation")
+def open_leave_modal_for_status(page):
+    """Open create leave request modal for status validation flow."""
     page.locator("td.fc-day.fc-future:visible").first.click()
+
+
+@when("user handles leave balance warning for status validation if shown")
+def handle_warning_for_status(page):
+    """Handle leave balance warning popup when it appears."""
     _click_ok_if_alert_visible(page)
+
+
+@when("user enters valid leave details for status validation")
+def enter_leave_details_for_status(page, leave_ctx):
+    leave = _load_leave_data()
     dialog = _leave_dialog(page)
     leave_ctx["reason"] = leave["reason"]
     max_attempts = 5
@@ -191,9 +188,9 @@ def apply_leave_for_status(page, leave_ctx):
         logger.error("Failed to find valid leave date after multiple attempts")
         raise AssertionError("Failed to find a valid leave date range after multiple attempts.")
 
-
 @then("the applied leave should appear in My Leave with status Pending for approval")
 def verify_leave_status(page, leave_ctx):
+    """Verify the applied leave appears with pending approval status."""
     page.wait_for_url("**/index.php/pendingleaves")
 
     grid = page.locator("#pendingleaves").first
@@ -209,3 +206,4 @@ def verify_leave_status(page, leave_ctx):
     except AssertionError as e:
         logger.error(f"Expected leave status not found: {str(e)}")
         raise
+    

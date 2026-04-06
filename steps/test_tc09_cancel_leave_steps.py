@@ -1,36 +1,18 @@
-import yaml
+"""BDD steps for cancelling a pending leave request."""
 
-from pytest_bdd import scenarios, given, when, then
-
-from pathlib import Path
-from pages.base_page import BasePage
+from pytest_bdd import scenarios, when, then
 
 from utils.logger import get_logger
-from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 logger = get_logger()
 
 scenarios("../features/tc09_cancel_leave_request.feature")
 
-def _load_valid_creds():
-    data_path = Path("./data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"] 
-
-@given("user logs into HRMS and navigates to My leave page")
-
-def my_leave_page(page, config):
-    creds = _load_valid_creds()
-    context.page = page
-    base_page = BasePage(page)
-    logger.info("Logging into HRMS and navigating to my leave page")
-    base_page.login(config.get_url(), creds["username"], creds["password"])
-    base_page.navigate_to_my_leave()
-    base_page.page.wait_for_load_state("networkidle")
-
 @when("user cancels leave")
 def cancel_leave(page, context):
+    """Cancel the first pending leave found in the table."""
     logger.info("Attempting to cancel leave request")
     
     try:
@@ -56,6 +38,7 @@ def cancel_leave(page, context):
 
 @then("cancelled leave appears on top with valid status")
 def validate_cancel(page, context):
+    """Verify the cancelled leave shows the expected status."""
     logger.info("Validating cancelled leave appears on top with status 'Cancelled'")
     try:
 
@@ -66,3 +49,4 @@ def validate_cancel(page, context):
     except AssertionError as e:
         logger.error(f"Cancel leave request not validated: {str(e)}")
         raise
+    

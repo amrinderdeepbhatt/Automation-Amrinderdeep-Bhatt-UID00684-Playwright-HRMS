@@ -1,31 +1,25 @@
-from pytest_bdd import given, when, then, scenarios 
+"""BDD steps for filtering leave records by date range."""
 
-from pathlib import Path
-
-import yaml
+from pytest_bdd import when, then, scenarios 
 
 from utils.test_data_factory import TestDataFactory
 
 from datetime import datetime, timedelta
 
-from pages.base_page import BasePage
 from utils.logger import get_logger
-from utils.test_context import context
+
+import steps.test_shared_steps  # noqa: F401
 
 logger = get_logger()
 
 scenarios("../features/tc07_from_to_date_filter.feature")
 
-def _load_valid_creds():
-    data_path = Path("./data/login.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid"]
-
 def _date(offset):
+    """Return datetime shifted from today by offset days."""
     return datetime.now() + timedelta(days=offset)
 
 def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
+    """Pick a date from the datepicker with optional minimum day."""
     input_locator.click()
 
     datepicker = page.locator("#ui-datepicker-div").first
@@ -83,20 +77,10 @@ def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
     selectable_days.nth(chosen_index).click()
     return chosen_day
 
-@given("user logs into HRMS and opens my leave page")
-def open_my_leave(page, config):
-    creds = _load_valid_creds()
-    context.page = page
-    logger.info("Logging in and navigating to My leave page")
-    base_page = BasePage(page)
-    base_page.login(config.get_url(), creds["username"], creds["password"])
-    base_page.navigate_to_my_leave()
-
-@when("user clicks on search and filters by filling from and to dates")
+@when("user fills from and to dates for leave filter")
 def filter_from_to_date(page, context):
+    """Fill from and to date filters using generated valid dates."""
     logger.info("Filtering leave records by from and to dates")
-    page.locator("input.togglesearch").first.click()
-    page.wait_for_load_state("networkidle")
 
     from_input = page.locator("#from_date").first
     to_input = page.locator("#to_date").first
@@ -114,6 +98,7 @@ def filter_from_to_date(page, context):
 
 @then("leave records should be filtered in selected timeframe")
 def validate_timeframe(page, context):
+    """Assert listed rows fall within the selected timeframe."""
     from_dates = page.locator("#pendingleaves tbody tr td:nth-child(4) span")
     to_dates = page.locator("#pendingleaves tbody tr td:nth-child(5) span")
 
@@ -140,3 +125,4 @@ def validate_timeframe(page, context):
     except AssertionError as e:
         logger.error(f"Timeframe filter assertion failed: {str(e)}")
         raise
+    

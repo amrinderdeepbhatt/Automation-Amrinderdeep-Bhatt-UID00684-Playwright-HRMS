@@ -1,8 +1,11 @@
+"""CLI entry point to run BDD tests with environment options."""
+
 import argparse
 import os
 import subprocess
 
 def main():
+    """Parse CLI flags and invoke pytest from the project root."""
     parser = argparse.ArgumentParser(description="Run BDD scenarios")
     parser.add_argument("--env", default="qa")
     parser.add_argument("--browser", default="chromium")
@@ -34,3 +37,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
