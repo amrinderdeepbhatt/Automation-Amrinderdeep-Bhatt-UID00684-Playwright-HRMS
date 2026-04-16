@@ -1,204 +1,137 @@
 """BDD steps for submitting a valid leave request."""
 
 from datetime import datetime, timedelta
-from pathlib import Path
 
-import yaml
-from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError, expect
 from pytest_bdd import scenarios, then, when
-from utils.test_data_factory import TestDataFactory
-
-from utils.logger import get_logger
-from utils.test_context import context
 
 import steps.test_shared_steps  # noqa: F401
-
-logger = get_logger()
+from pages.leave_page import LeavePage
+from utils.test_context import context
+from utils.test_data_factory import TestDataFactory
+from utils.retry import retry
 
 scenarios("../features/tc03_leave_submit.feature")
 
 
-def _load_leave_data():
-    """Read leave details used for form submission."""
-    data_path = Path("data/leave.yaml")
-    with data_path.open("r", encoding="utf-8") as stream:
-        data = yaml.safe_load(stream)
-    return data["valid_leave"]
-
-def _handle_repeated_alerts(page, attempts=5):
-    """Clear repeat alerts that can block form actions."""
-    for _ in range(attempts):
-        clicked = _click_ok_if_alert_visible(page, timeout_ms=3000)
-        if not clicked:
-            break
-        page.wait_for_timeout(500)
-
 def _build_random_leave_window():
     """Generate a random valid date window for leave."""
     factory = TestDataFactory(seed=None)
-    return factory.leave_date_offsets(min_start=5, max_start=365, min_duration=1, max_duration=5)
+    return factory.leave_date_offsets(min_start=5, max_start=120, min_duration=1, max_duration=5)
 
 
 def _date(offset):
-    """Return current datetime shifted by day offset."""
+    """Return current datetime shifted by day offset.
+
+    Args:
+        offset: Number of days to shift from today.
+    """
     return datetime.now() + timedelta(days=offset)
 
 
-def _pick_date_from_calendar(page, input_locator, target_date, min_day=None):
-    """Pick a date from the calendar widget with optional lower bound."""
-    input_locator.click()
+def _parse_prefilled_date(input_locator):
+    """Parse a prefilled date value from input if available.
 
-    datepicker = page.locator("#ui-datepicker-div").first
-    datepicker.wait_for(state="visible", timeout=10000)
+    Args:
+        input_locator: Locator for date input.
+    """
+    raw_value = input_locator.input_value().strip()
+    if not raw_value:
+        return None
 
-    for _ in range(12):
-        month_text = datepicker.locator(".ui-datepicker-month").first.inner_text().strip()
-        year_text = datepicker.locator(".ui-datepicker-year").first.inner_text().strip()
+    for fmt in ("%Y/%m/%d", "%Y-%m-%d", "%d/%m/%Y", "%m/%d/%Y"):
+        try:
+            return datetime.strptime(raw_value, fmt)
+        except ValueError:
+            continue
 
-        expected_month = target_date.strftime("%B")
-        expected_year = target_date.strftime("%Y")
-        if month_text == expected_month and year_text == expected_year:
-            break
-
-        datepicker.locator(".ui-datepicker-next").click()
-
-    day = str(target_date.day)
-    target_day = datepicker.locator(
-        f"xpath=.//td[@data-handler='selectDay' and not(contains(@class,'ui-datepicker-other-month'))]/a[normalize-space()='{day}']"
-    ).first
-
-    if target_day.count() and (min_day is None or int(day) > min_day):
-        target_day.click()
-        return int(day)
-
-    selectable_days = datepicker.locator(
-        "xpath=.//td[@data-handler='selectDay' and not(contains(@class,'ui-datepicker-other-month'))]/a"
-    )
-    total = selectable_days.count()
-    if total == 0:
-        raise AssertionError("No selectable days available in datepicker")
-
-    chosen_index = 0
-    found_greater_day = False
-    if min_day is not None:
-        for idx in range(total):
-            value = int(selectable_days.nth(idx).inner_text().strip())
-            if value > min_day:
-                chosen_index = idx
-                found_greater_day = True
-                break
-
-        if not found_greater_day:
-            datepicker.locator(".ui-datepicker-next").click()
-            datepicker.wait_for_timeout(200)
-            selectable_days = datepicker.locator(
-                "xpath=.//td[@data-handler='selectDay' and not(contains(@class,'ui-datepicker-other-month'))]/a"
-            )
-            total = selectable_days.count()
-            if total == 0:
-                raise AssertionError("No selectable days available in next month datepicker")
-            chosen_index = 0
-
-    chosen_day = int(selectable_days.nth(chosen_index).inner_text().strip())
-    selectable_days.nth(chosen_index).click()
-    return chosen_day
+    return None
 
 
-def _leave_dialog(page):
-    """Return the leave request dialog locator."""
-    return page.locator("#leaverequestform").first
+def _normalize_leave_window(from_input, from_date, to_date):
+    """Keep generated window aligned with modal baseline date.
+
+    Args:
+        from_input: Locator for From date input.
+        from_date: Candidate From date.
+        to_date: Candidate To date.
+    """
+    baseline = _parse_prefilled_date(from_input)
+    if baseline and from_date.date() < baseline.date():
+        shift_days = (baseline.date() - from_date.date()).days
+        from_date = from_date + timedelta(days=shift_days)
+        to_date = to_date + timedelta(days=shift_days)
+
+    if to_date.date() <= from_date.date():
+        to_date = from_date + timedelta(days=1)
+
+    return from_date, to_date
 
 
-def _click_ok_if_alert_visible(page, timeout_ms=1000):
-    """Dismiss popup alert if it appears within timeout."""
-    ok_button = page.locator("#popup_ok").first
+@retry(max_retries=5, delay=0, exceptions=(RuntimeError, PlaywrightTimeoutError))
+def _submit_leave_request_attempt(page):
+    """Try once to fill and submit a leave request.
+
+    Args:
+        page: Active Playwright page.
+    """
+    leave_page = LeavePage(page)
+
+    from_input = leave_page.dialog.locator("#from_date").first
+
+    start_offset, end_offset = _build_random_leave_window()
+    from_date = _date(start_offset)
+    to_date = _date(end_offset)
+    from_date, to_date = _normalize_leave_window(from_input, from_date, to_date)
+
+    leave_page.fill_leave_details("Annual Leave", None, from_date, to_date)
+    leave_page.handle_repeated_alerts(attempts=5)
+
+    leave_page.submit_request()
+
     try:
-        ok_button.wait_for(state="visible", timeout=timeout_ms)
+        page.wait_for_url("**/pendingleaves")
+        return
+
     except PlaywrightTimeoutError:
-        return False
+        error = page.locator("#errors-from_date")
 
-    ok_button.click()
-    return True
+        if error.count() > 0:
+            error_text = error.first.inner_text().strip()
+            if "already been applied" in error_text.lower():
+                raise RuntimeError("Leave already applied for this date")
 
+            raise AssertionError(f"Unexpected error: {error_text}")
+
+        raise
 @when("user opens create leave request modal from Apply Leave")
 def open_leave_modal(page):
-    """Open the create leave request modal from calendar."""
-    logger.info("Opening create leave request modal")
-    page.locator("td.fc-day.fc-future:visible").first.click()
-    _leave_dialog(page).wait_for(state="visible", timeout=10000)
+    """Open the create leave request modal from calendar.
 
-
-@when("user handles leave balance warning if shown")
-def handle_first_warning(page):
-    """Handle initial leave-balance warning if present."""
-    logger.info("Handling leave balance warning if shown")
-    _click_ok_if_alert_visible(page)
+    Args:
+        page: Active Playwright page.
+    """
+    leave_page = LeavePage(page)
+    leave_page.open_create_leave_request_modal()
 
 
 @when("user enters leave details with valid date range")
 def fill_leave_form(page):
-    leave = _load_leave_data()
-    dialog = _leave_dialog(page)
-    max_attempts = 5
-    logger.info("Filling leave form with valid date range and submitting")
-    for attempt in range(max_attempts):
-        native_leave_type = dialog.locator("#leavetypeid").first
-        if native_leave_type.count():
-            native_leave_type.select_option(label="Annual Leave")
-        else:
-            leave_type = dialog.locator("#s2id_leavetypeid").first
-            leave_type.click()
-            dropdown = page.locator("#select2-drop").first
-            dropdown.wait_for(state="visible", timeout=10000)
-            sick_option = dropdown.locator(".select2-results .select2-result-label span", has_text="Sick Leave").first
-            if sick_option.count():
-                sick_option.click()
-            else:
-                dropdown.locator(".select2-results .select2-result-selectable").nth(1).click()
+    """Fill leave form with valid details and submit.
 
-        reason_input = dialog.locator("#reason").first
-        if reason_input.count():
-            reason_input.fill(leave["reason"])
-
-        from_input = dialog.locator("#from_date").first
-        to_input = dialog.locator("#to_date").first
-
-        start_offset, end_offset = _build_random_leave_window()
-        from_date = _date(start_offset)
-        to_date = _date(end_offset)
-
-        selected_from_day = _pick_date_from_calendar(page, from_input, from_date)
-        _pick_date_from_calendar(page, to_input, to_date, min_day=selected_from_day)
-        _handle_repeated_alerts(page, attempts=5)
-
-        dialog.locator("#submitbutton").click()
-
-        try:
-            page.wait_for_url("**/pendingleaves", timeout=5000)
-            break
-
-        except PlaywrightTimeoutError:
-            error = page.locator("#errors-from_date")
-
-            if error.count() > 0:
-                error_text = error.first.inner_text().strip()
-                logger.warning(f"Error text: {error_text}")
-                if "already been applied" in error_text.lower():
-                    logger.warning("Leave already applied for this date, trying for new date")
-                    continue
-
-                raise AssertionError(f"Unexpected error: {error_text}")
-
-        break
-    else:
-        logger.error("Failed to find a valid leave date range after multiple attempts")
-        raise AssertionError("Failed to find a valid leave date range after multiple attempts.")
+    Args:
+        page: Active Playwright page.
+    """
+    _submit_leave_request_attempt(page)
 
 @then("user should see leave request submission success")
 def verify_leave_request_submitted(page):
-    """Verify successful leave submission message and redirect."""
-    logger.info("Verifying leave request was submitted successfully")
+    """Verify successful leave submission message and redirect.
+
+    Args:
+        page: Active Playwright page.
+    """
     page.wait_for_url("**/pendingleaves")
     success = page.get_by_text("Leave request added successfully.", exact=False).first
-    success.wait_for(state="visible", timeout=10000)
-    assert success.is_visible(), "Leave request success message not visible"
+    success.wait_for(state="visible")
+    expect(success).to_be_visible()

@@ -1,7 +1,7 @@
 """Configuration loader for environment and browser settings."""
 
-import yaml
 from dotenv import load_dotenv
+import yaml
 
 
 class ConfigLoader:
@@ -28,7 +28,11 @@ class ConfigLoader:
             self.config["env"] = env
 
     def get(self, key):
-        """Return a value from config by key."""
+        """Return a value from config by key.
+
+        Args:
+            key: Configuration key name.
+        """
         return self.config.get(key)
 
     def get_url(self):
@@ -43,3 +47,4 @@ class ConfigLoader:
     def is_headless(self):
         """Return whether browser should run in headless mode."""
         return self.config["browser"]["headless"]
+    

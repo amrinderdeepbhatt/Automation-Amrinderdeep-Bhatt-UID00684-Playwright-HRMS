@@ -1,9 +1,11 @@
 """Shared pytest fixtures and failure reporting hooks for UI tests."""
 
-import pytest
-import os
-from config.config_loader import ConfigLoader
 import datetime
+import os
+
+import pytest
+
+from config.config_loader import ConfigLoader
 
 from utils.logger import get_logger
 from utils.test_context import context
@@ -23,7 +25,11 @@ def logger():
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
-    """Capture a screenshot and log details whenever a test fails."""
+    """Capture a screenshot and log details whenever a test fails.
+
+    Args:
+        item: Pytest test item for the current test case.
+    """
     outcome = yield
     report = outcome.get_result()
     

@@ -31,10 +31,9 @@ def main():
         cmd,
         check=True,
         env=env_vars,
-        cwd=project_root  
+        cwd=project_root
     )
 
 
 if __name__ == "__main__":
     main()
-    

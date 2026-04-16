@@ -6,13 +6,21 @@ from pathlib import Path
 import yaml
 
 def _load_login_data(path="data/login.yaml"):
-    """Read login profile data from disk."""
+    """Read login profile data from disk.
+
+    Args:
+        path: Path to the login YAML test data file.
+    """
     data_path = Path(path)
     with data_path.open("r", encoding="utf-8") as stream:
         return yaml.safe_load(stream) or {}
     
 def load_login_credentials(profile="valid"):
-    """Resolve username and password for a given profile."""
+    """Resolve username and password for a given profile.
+
+    Args:
+        profile: Credential profile key in login test data.
+    """
     data = _load_login_data()
     profile_data = data.get(profile, {})
 
