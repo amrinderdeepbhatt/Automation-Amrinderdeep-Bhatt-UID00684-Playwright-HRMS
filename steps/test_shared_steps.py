@@ -2,6 +2,7 @@
 
 import pytest
 from pytest_bdd import given, parsers, when
+from urllib.parse import urljoin
 
 from pages.base_page import BasePage
 from pages.login_page import LoginPage
@@ -27,16 +28,29 @@ def _login(page, profile="valid"):
     return login_page
 
 
-@given("user opens the HRMS login page")
-def given_open_login_page(page, config):
-    """Open login page for authentication scenarios.
+@given(parsers.parse('user opens the {page_name} page at "{link}"'))
+def given_open_named_page(page, config, page_name, link):
+    """Open a named page by link using the reusable navigation step.
 
     Args:
         page: Active Playwright page.
         config: Loaded framework configuration.
+        page_name: Human-readable page name (unused, informative).
+        link: Absolute URL or site path to open.
     """
+    # Navigate to the target link and set context.page.
     context.page = page
-    BasePage(page).page.goto(config.get_url())
+    base = config.get_url().rstrip("/")
+    if link.startswith("http"):
+        target = link
+    elif link == "/":
+        target = base
+    else:
+        target = urljoin(base + "/", link)
+    BasePage(page).page.goto(target)
+    BasePage(page).page.wait_for_load_state("networkidle")
+
+
 
 
 @when(parsers.parse("user logs in with {profile} credentials from test data"))
@@ -57,31 +71,27 @@ def when_open_leave_filter_search(page):
     Args:
         page: Active Playwright page.
     """
-    page.locator("input.togglesearch").first.click()
-    page.wait_for_load_state("networkidle")
+    from pages.leave_page import LeavePage
+
+    LeavePage(page).open_leave_filter_search()
 
 
-@when("user opens Leave Request page")
-def when_open_leave_request(page):
-    """Navigate to Leave Request page from main menu.
-
-    Args:
-        page: Active Playwright page.
-    """
-    BasePage(page).navigate_main_menu("Self Service")
-
-
-@when("user opens My Leave page")
-def when_open_my_leave(page):
-    """Navigate to My Leave page from main menu.
+@when(parsers.parse('user opens "{page_name}" page from "{menu_name}"'))
+def when_open_page_from_menu(page, page_name, menu_name):
+    """Navigate to a page by opening a menu and clicking the page item.
 
     Args:
         page: Active Playwright page.
+        page_name: Visible text of the target page/link.
+        menu_name: Top-level menu label to expand.
     """
     base_page = BasePage(page)
-    base_page.navigate_main_menu("Self Service")
-    base_page.click("text=My Leave")
+    base_page.navigate_main_menu(menu_name)
+    base_page.click_text(page_name)
     page.wait_for_load_state("networkidle")
+
+
+# Specific navigation steps are handled by the parameterized step above.
 
 
 @when(parsers.parse('user navigates to "{menu_name}" from navigation bar'))

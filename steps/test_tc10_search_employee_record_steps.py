@@ -5,9 +5,9 @@ from pathlib import Path
 import yaml
 
 from pytest_bdd import scenarios, then, when
-from playwright.sync_api import expect
 
-import steps.test_shared_steps  # noqa: F401
+import steps.test_shared_steps
+from pages.employee_search_page import EmployeeSearchPage
 
 from utils.logger import get_logger
 from utils.test_context import context
@@ -30,8 +30,7 @@ def select_employee_uid_search_type(page):
     Args:
         page: Active Playwright page.
     """
-    page.click("#s2id_search_val")
-    page.locator("#search_val").select_option("emp_id")
+    EmployeeSearchPage(page).select_employee_uid_search_type()
 
 
 @when("user enters a valid Employee UID")
@@ -43,7 +42,7 @@ def enter_valid_employee_uid(page):
     """
     uid = _get_UUID()
     context.employee_uid = uid
-    page.fill("#search_str", uid)
+    EmployeeSearchPage(page).enter_employee_uid(uid)
 
 
 @when("user clicks employee search button")
@@ -53,9 +52,7 @@ def click_employee_search_button(page):
     Args:
         page: Active Playwright page.
     """
-    page.get_by_role("button", name="Search").click()
-
-    page.wait_for_selector("#employees_search .list-item")
+    EmployeeSearchPage(page).search()
 
 @then("the system should display the matching employee record")
 def validate_employee(page):
@@ -64,19 +61,9 @@ def validate_employee(page):
     Args:
         page: Active Playwright page.
     """
-    employees = page.locator("#employees_search .list-item")
-    count = employees.count()
+    employee_page = EmployeeSearchPage(page)
+    count = employee_page.get_employee_result_count()
     assert count > 0, f"Expected at least one employee result, but found {count}"
 
-    found = False
-    for i in range(count):
-        emp = employees.nth(i)
-        uuid_locator = emp.locator("li:has(i.fa-key) span")
-        if uuid_locator.count() == 0:
-            continue
-        uuid_text = uuid_locator.inner_text().strip()
-        if uuid_text == getattr(context, "employee_uid", _get_UUID()):
-            found = True
-            break
-
-    assert found, f"Expected employee with UID {getattr(context, 'employee_uid', _get_UUID())} not found in results"
+    uid = getattr(context, "employee_uid", _get_UUID())
+    assert employee_page.has_employee_uid(uid), f"Expected employee with UID {uid} not found in results"

@@ -47,4 +47,3 @@ class ConfigLoader:
     def is_headless(self):
         """Return whether browser should run in headless mode."""
         return self.config["browser"]["headless"]
-    

@@ -4,6 +4,31 @@ import random
 
 from faker import Faker
 
+
+def build_leave_date_window(
+    min_start=3,
+    max_start=45,
+    min_duration=1,
+    max_duration=3,
+    seed=None,
+):
+    """Build a random leave window as start and end offsets.
+
+    Args:
+        min_start: Minimum days from today for leave start.
+        max_start: Maximum days from today for leave start.
+        min_duration: Minimum leave duration in days.
+        max_duration: Maximum leave duration in days.
+        seed: Optional Faker seed for deterministic output.
+    """
+    factory = TestDataFactory(seed=seed)
+    return factory.leave_date_offsets(
+        min_start=min_start,
+        max_start=max_start,
+        min_duration=min_duration,
+        max_duration=max_duration,
+    )
+
 class TestDataFactory:
     """Build repeatable fake values used by UI tests."""
 

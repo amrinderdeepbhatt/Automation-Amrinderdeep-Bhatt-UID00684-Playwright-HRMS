@@ -5,4 +5,3 @@ valid:
 invalid:
   username_env: HRMS_INVALID_USERNAME
   password_env: HRMS_INVALID_PASSWORD
-  

@@ -1,9 +1,11 @@
 """BDD steps for login flow assertions."""
 
-from pytest_bdd import parsers, scenarios, then
+import re
+
+from pytest_bdd import scenarios, then
 from playwright.sync_api import expect
 
-import steps.test_shared_steps  # noqa: F401
+import steps.test_shared_steps
 
 from utils.logger import get_logger
 
@@ -12,26 +14,28 @@ scenarios("../features/tc01_login.feature")
 logger = get_logger()
 
 
-@then(parsers.parse("user should see {expected_result}"))
-def verify_login_result(page, expected_result):
-    """Assert the outcome for valid and invalid login attempts.
+@then("user should be redirected to the welcome page")
+def verify_valid_login_result(page):
+    """Verify a successful login redirects to the welcome page.
 
     Args:
         page: Active Playwright page.
-        expected_result: Expected login outcome label from feature examples.
     """
-    logger.info(f"Verifying login result: {expected_result}")
+    logger.info("Verifying valid login result")
+    page.wait_for_url("**/index.php/index/welcome")
+    expect(page).to_have_url(re.compile(r".*/index\.php/index/welcome$"))
+    logger.info("Login successful")
 
-    if expected_result == "redirected to the welcome page":
-        page.wait_for_url("**/index.php/index/welcome")
-        logger.info("Login successful")
-        return
 
-    if expected_result == "invalid login error":
-        error_text = "The username or password you entered is incorrect."
-        error = page.locator("#usernameerror").filter(has_text=error_text).first
-        error.wait_for(state="visible")
-        expect(error).to_have_text(error_text)
-        return
+@then("user should see an invalid login error")
+def verify_invalid_login_result(page):
+    """Verify an invalid login displays the expected error message.
 
-    raise AssertionError(f"Unsupported expected result: {expected_result}")
+    Args:
+        page: Active Playwright page.
+    """
+    logger.info("Verifying invalid login result")
+    error_text = "The username or password you entered is incorrect."
+    from pages.login_page import LoginPage
+
+    LoginPage(page).validate_invalid_login_error(error_text)

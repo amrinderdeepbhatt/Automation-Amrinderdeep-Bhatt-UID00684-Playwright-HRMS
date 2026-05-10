@@ -1,13 +1,12 @@
 @smoke @regression
 Feature: Authentication - TC01 Login
 
-  Scenario Outline: User can login with valid or invalid credentials
-    Given user opens the HRMS login page
-    When user logs in with <profile> credentials from test data
-    Then user should see <expected_result>
+  Scenario: User can login with valid credentials
+    Given user opens the HRMS login page at "/"
+    When user logs in with valid credentials from test data
+    Then user should be redirected to the welcome page
 
-    Examples:
-      | profile | expected_result                 |
-      | valid   | redirected to the welcome page  |
-      | invalid | invalid login error             |
- 
+  Scenario: User sees an invalid login error
+    Given user opens the HRMS login page at "/"
+    When user logs in with invalid credentials from test data
+    Then user should see an invalid login error

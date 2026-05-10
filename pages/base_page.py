@@ -1,12 +1,22 @@
 """Reusable Playwright page actions used across BDD steps."""
 
-from playwright.sync_api import expect
-
 from utils.retry import retry
 
 
 class BasePage:
     """Wrap common UI interactions with lightweight helpers."""
+
+    MAIN_MENU_SELECTOR = "#main_ul li b"
+    DATEPICKER_SELECTOR = "#ui-datepicker-div:visible"
+    POPUP_OK_SELECTOR = "#popup_ok"
+    DATEPICKER_MONTH_SELECTOR = "select.ui-datepicker-month"
+    DATEPICKER_YEAR_SELECTOR = "select.ui-datepicker-year"
+    DATEPICKER_MONTH_LABEL_SELECTOR = "span.ui-datepicker-month"
+    DATEPICKER_YEAR_LABEL_SELECTOR = "span.ui-datepicker-year"
+    DATEPICKER_NEXT_SELECTOR = ".ui-datepicker-next"
+    DATEPICKER_PREV_SELECTOR = ".ui-datepicker-prev"
+    DATEPICKER_DAY_SELECTOR = "td[data-handler='selectDay']"
+    DATEPICKER_PREV_MONTH_DAYS_SELECTOR = "td[data-handler='selectDay']:not(.ui-datepicker-other-month) a"
 
     def __init__(self, page):
         """Store the active Playwright page instance.
@@ -23,7 +33,12 @@ class BasePage:
             locator: Selector string for the target element.
         """
         self.wait_for_visible(locator)
-        self.page.locator(locator).click()
+        self.page.locator(locator).first.click()
+
+    def click_text(self, text):
+        """Click an element matching visible text."""
+        self.wait_for_visible(f"text={text}")
+        self.page.locator(f"text={text}").first.click()
 
     def fill(self, locator, text):
         """Fill an input field after visibility check.
@@ -33,7 +48,7 @@ class BasePage:
             text: Value to type into the input.
         """
         self.wait_for_visible(locator)
-        self.page.locator(locator).fill(text)
+        self.page.locator(locator).first.fill(text)
 
     def wait_for_visible(self, locator):
         """Wait until the given locator becomes visible.
@@ -41,17 +56,16 @@ class BasePage:
         Args:
             locator: Selector string for the element to wait for.
         """
-        expect(self.page.locator(locator)).to_be_visible()
+        self.page.locator(locator).first.wait_for(state="visible", timeout=5000)
 
-    @retry(max_retries=2, delay=1)
     def navigate_main_menu(self, menu_name):
         """Click a top-level main menu item by visible name.
 
         Args:
             menu_name: Visible label of the menu item to open.
         """
-        menu_item = self.page.locator("#main_ul li b", has_text=menu_name).first
-        expect(menu_item).to_be_visible()
+        menu_item = self.page.locator(self.MAIN_MENU_SELECTOR, has_text=menu_name).first
+        menu_item.wait_for(state="visible", timeout=5000)
         menu_item.click()
         self.page.wait_for_load_state("networkidle")
 
@@ -71,7 +85,7 @@ class BasePage:
         for attempt in range(2):
             input_locator.click()
 
-            datepicker = self.page.locator("#ui-datepicker-div:visible").last
+            datepicker = self.page.locator(self.DATEPICKER_SELECTOR).last
             datepicker.wait_for(state="visible")
 
             target_month_zero_based = str(target_date.month - 1)
@@ -91,7 +105,7 @@ class BasePage:
             if target_day.count():
                 target_day.click()
                 self._dismiss_popup_if_visible(attempts=5, wait_ms=150)
-                if self._wait_for_date_value(input_locator):
+                if self._has_date_value(input_locator):
                     return int(day)
                 continue
 
@@ -133,7 +147,7 @@ class BasePage:
             chosen_day = int(selectable_days.nth(fallback_index).inner_text().strip())
             selectable_days.nth(fallback_index).click()
             self._dismiss_popup_if_visible(attempts=5, wait_ms=150)
-            if self._wait_for_date_value(input_locator):
+            if self._has_date_value(input_locator):
                 return chosen_day
 
         raise AssertionError("Date selection did not persist in input field after retry")
@@ -177,7 +191,7 @@ class BasePage:
         """
         input_locator.click()
 
-        datepicker = self.page.locator("#ui-datepicker-div:visible").last
+        datepicker = self.page.locator(self.DATEPICKER_SELECTOR).last
         datepicker.wait_for(state="visible")
 
         target_month_zero_based = str(target_date.month - 1)
@@ -204,8 +218,8 @@ class BasePage:
                 candidate_index = idx
 
         if candidate_index == -1:
-            datepicker.locator(".ui-datepicker-prev").click()
-            selectable_days = datepicker.locator("td[data-handler='selectDay']:not(.ui-datepicker-other-month) a")
+            datepicker.locator(self.DATEPICKER_PREV_SELECTOR).click()
+            selectable_days = datepicker.locator(self.DATEPICKER_PREV_MONTH_DAYS_SELECTOR)
             total = selectable_days.count()
             if total == 0:
                 raise AssertionError("No selectable days available in previous month datepicker")
@@ -224,11 +238,7 @@ class BasePage:
         target_month_index = target_date.month - 1
         target_year = target_date.year
 
-        def _is_target_month_year():
-            month_index, year = self._get_displayed_month_year(datepicker)
-            return month_index == target_month_index and year == target_year
-
-        if _is_target_month_year():
+        if self._is_displayed_month_year_target(datepicker, target_month_index, target_year):
             return
 
         month_dropdown = datepicker.locator("select.ui-datepicker-month").first
@@ -246,18 +256,18 @@ class BasePage:
                 if year_dropdown.input_value() != target_year_str:
                     year_dropdown.select_option(value=target_year_str)
 
-            if _is_target_month_year():
+            if self._is_displayed_month_year_target(datepicker, target_month_index, target_year):
                 return
 
         current_month_index, current_year = self._get_displayed_month_year(datepicker)
         nav_selector = (
-            ".ui-datepicker-next"
+            self.DATEPICKER_NEXT_SELECTOR
             if (current_year, current_month_index) < (target_year, target_month_index)
-            else ".ui-datepicker-prev"
+            else self.DATEPICKER_PREV_SELECTOR
         )
 
         for _ in range(24):
-            if _is_target_month_year():
+            if self._is_displayed_month_year_target(datepicker, target_month_index, target_year):
                 return
 
             nav_button = datepicker.locator(nav_selector).first
@@ -270,10 +280,21 @@ class BasePage:
 
             nav_button.click()
 
-        if not _is_target_month_year():
+        if not self._is_displayed_month_year_target(datepicker, target_month_index, target_year):
             raise AssertionError(
                 f"Unable to open calendar month/year {target_date.strftime('%B')} {target_year}"
             )
+
+    def _is_displayed_month_year_target(self, datepicker, target_month_index, target_year):
+        """Check if datepicker is displaying the target month and year.
+
+        Args:
+            datepicker: Locator for the visible datepicker container.
+            target_month_index: Target zero-based month index (0-11).
+            target_year: Target year.
+        """
+        month_index, year = self._get_displayed_month_year(datepicker)
+        return month_index == target_month_index and year == target_year
 
     def _get_displayed_month_year(self, datepicker):
         """Return currently displayed datepicker month index and year.
@@ -281,32 +302,13 @@ class BasePage:
         Args:
             datepicker: Locator for the visible datepicker container.
         """
-        month_dropdown = datepicker.locator("select.ui-datepicker-month").first
-        year_dropdown = datepicker.locator("select.ui-datepicker-year").first
+        month_dropdown = datepicker.locator(self.DATEPICKER_MONTH_SELECTOR).first
+        year_dropdown = datepicker.locator(self.DATEPICKER_YEAR_SELECTOR).first
 
-        if month_dropdown.count() and year_dropdown.count():
-            return int(month_dropdown.input_value()), int(year_dropdown.input_value())
-
-        month_text = datepicker.locator("span.ui-datepicker-month").first.inner_text().strip()
-        year_text = datepicker.locator("span.ui-datepicker-year").first.inner_text().strip()
-        month_map = {
-            "January": 0,
-            "February": 1,
-            "March": 2,
-            "April": 3,
-            "May": 4,
-            "June": 5,
-            "July": 6,
-            "August": 7,
-            "September": 8,
-            "October": 9,
-            "November": 10,
-            "December": 11,
-        }
-        if month_text not in month_map:
-            raise AssertionError(f"Unknown calendar month label: {month_text}")
-
-        return month_map[month_text], int(year_text)
+        assert month_dropdown.count() and year_dropdown.count(), (
+            "Datepicker month/year dropdowns not found"
+        )
+        return int(month_dropdown.input_value()), int(year_dropdown.input_value())
 
     def _dismiss_popup_if_visible(self, attempts=3, wait_ms=120):
         """Dismiss optional warning popup, including slightly delayed appearances.
@@ -315,13 +317,12 @@ class BasePage:
             attempts: Number of short re-checks for delayed popup render.
             wait_ms: Delay between checks in milliseconds.
         """
-        ok_button = self.page.locator("#popup_ok").first
-        for idx in range(attempts):
-            if ok_button.is_visible():
+        for _ in range(attempts):
+            ok_button = self.page.locator(self.POPUP_OK_SELECTOR).first
+            if ok_button.count() and ok_button.is_visible():
                 ok_button.click()
-                continue
-            if idx < attempts - 1:
-                self.page.wait_for_timeout(wait_ms)
+                return
+            self.page.wait_for_timeout(wait_ms)
 
     def _has_date_value(self, input_locator):
         """Check whether a date input currently contains a value.
@@ -330,25 +331,6 @@ class BasePage:
             input_locator: Locator for date input field.
         """
         return bool(input_locator.input_value().strip())
-
-    def _wait_for_date_value(self, input_locator, attempts=6, wait_ms=120):
-        """Wait briefly for date value to persist after calendar selection.
-
-        Args:
-            input_locator: Locator for date input field.
-            attempts: Number of checks before considering selection unstable.
-            wait_ms: Delay between checks in milliseconds.
-        """
-        for idx in range(attempts):
-            if self._has_date_value(input_locator):
-                return True
-
-            self._dismiss_popup_if_visible(attempts=2, wait_ms=80)
-
-            if idx < attempts - 1:
-                self.page.wait_for_timeout(wait_ms)
-
-        return self._has_date_value(input_locator)
 
     def _clear_date_input(self, input_locator):
         """Clear a readonly date input via script to reset modal defaults.
@@ -365,5 +347,3 @@ class BasePage:
             }
             """
         )
-
-
