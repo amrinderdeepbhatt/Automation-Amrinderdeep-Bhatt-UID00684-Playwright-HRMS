@@ -89,6 +89,27 @@ python runner/run_bdd.py --headless true --tags smoke
 - `--tags` pytest marker expression
 - `--path` target path (default: `steps`)
 
+## Parallel Execution
+
+Run tests in parallel using `pytest-xdist` by specifying workers. Examples:
+
+```bash
+# automatic worker count
+python runner/run_bdd.py --workers auto
+
+# two workers
+python runner/run_bdd.py --workers 2
+
+# or via pytest directly
+pytest -n auto steps
+```
+
+Notes:
+- Each pytest-xdist worker writes logs to `artifacts/logs/test-<worker>.log` and
+	screenshots to `artifacts/screenshots/<worker>/` to avoid file contention.
+- Test data generators mix the xdist worker id into seeds to reduce duplicate
+	generated values between parallel workers.
+
 ## Debug Artifacts
 
 - Failure screenshots: `artifacts/screenshots/`
