@@ -4,6 +4,8 @@ import logging
 import os
 from logging.handlers import RotatingFileHandler
 
+_WORKER = os.environ.get("PYTEST_XDIST_WORKER", "master")
+
 
 def get_logger(name="framework"):
     """Return a configured logger instance for the framework.
@@ -14,12 +16,14 @@ def get_logger(name="framework"):
     log_dir = "artifacts/logs"
     os.makedirs(log_dir, exist_ok=True)
 
-    logger = logging.getLogger(name)
+    log_file = os.path.join(log_dir, f"test-{_WORKER}.log")
+
+    logger = logging.getLogger(f"{name}-{_WORKER}")
     logger.setLevel(logging.DEBUG)
 
     if not logger.handlers:
         handler = RotatingFileHandler(
-            f"{log_dir}/test.log", maxBytes=5 * 1024 * 1024, backupCount=3
+            log_file, maxBytes=5 * 1024 * 1024, backupCount=3
         )
 
         formatter = logging.Formatter(

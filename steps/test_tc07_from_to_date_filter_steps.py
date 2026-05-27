@@ -7,7 +7,6 @@ from utils.test_data_factory import TestDataFactory
 from datetime import datetime, timedelta
 
 from utils.logger import get_logger
-1
 import steps.test_shared_steps
 
 logger = get_logger()

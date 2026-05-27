@@ -4,6 +4,7 @@ import datetime
 import os
 
 import pytest
+import os
 
 from config.config_loader import ConfigLoader
 
@@ -34,13 +35,18 @@ def pytest_runtest_makereport(item):
     report = outcome.get_result()
     
     if report.failed:
-        page = context.page
+        page = item.funcargs.get("page") if hasattr(item, "funcargs") else None
+        if not page:
+            page = getattr(context, "page", None)
+
+        test_worker = os.environ.get("PYTEST_XDIST_WORKER", "master")
         logger = get_logger()
         test_name = item.nodeid.replace("/", "_").replace(":", "_").replace("::", "_")
-        os.makedirs("artifacts/screenshots", exist_ok=True)
+        screenshots_dir = os.path.join("artifacts", "screenshots", test_worker)
+        os.makedirs(screenshots_dir, exist_ok=True)
         if page:
-            timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")            
-            path = f"artifacts/screenshots/failure_{test_name}_{timestamp}.png"
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+            path = os.path.join(screenshots_dir, f"failure_{test_name}_{timestamp}.png")
             try:
                 page.screenshot(path=path)
                 logger.error(f"Screenshot captures: {path}")

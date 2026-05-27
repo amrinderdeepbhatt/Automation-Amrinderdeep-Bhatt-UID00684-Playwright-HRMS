@@ -1,6 +1,7 @@
 """Factories for generating realistic dynamic test data."""
 
 import random
+import os
 
 from faker import Faker
 
@@ -40,6 +41,14 @@ class TestDataFactory:
         Args:
             seed: Random seed used for deterministic fake data.
         """
+        if seed is None:
+            base = random.randint(1000, 9999)
+            worker = os.environ.get("PYTEST_XDIST_WORKER")
+            if worker:
+                seed = base + (abs(hash(worker)) % 1000)
+            else:
+                seed = base
+
         self.faker = Faker()
         self.faker.seed_instance(seed)
 

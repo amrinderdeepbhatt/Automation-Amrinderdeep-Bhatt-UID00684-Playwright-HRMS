@@ -55,18 +55,6 @@ class LeavePage(BasePage):
         self.page.locator("input.togglesearch").first.click()
         self.page.wait_for_load_state("networkidle")
 
-    def open_apply_leave_page(self):
-        """Navigate to the Apply Leave page from the main menu."""
-        self.navigate_main_menu("Self Service")
-        self.click_text("Apply Leave")
-        self.page.wait_for_load_state("networkidle")
-
-    def open_pending_leaves_page(self):
-        """Navigate to the pending leaves page from the main menu."""
-        self.navigate_main_menu("Self Service")
-        self.click_text("My Leave")
-        self.page.wait_for_load_state("networkidle")
-
     def select_leave_type(self, leave_type_label):
         """Select a leave type from the leave request form.
 
@@ -227,15 +215,9 @@ class LeavePage(BasePage):
                 f"Expected applied date '{filter_date}' but got '{parsed_applied}'"
             )
 
-    def cancel_first_pending_leave(self, reset_filters=True):
-        """Cancel the first pending leave request in the table and return its leave id.
-
-        Args:
-            reset_filters: If True, switch the grid back to the full list before searching.
-        """
-        if reset_filters:
-            self.click(self.FILTER_ALL_SELECTOR)
-
+    def cancel_first_pending_leave(self):
+        """Cancel the first pending leave request in the table and return its leave id."""
+        self.click(self.FILTER_ALL_SELECTOR)
         rows = self.page.locator(self.LEAVE_TABLE_ROWS_SELECTOR)
         row_count = rows.count()
         assert row_count > 0, "Expected at least one leave row"
@@ -258,13 +240,6 @@ class LeavePage(BasePage):
             return leave_id
 
         raise AssertionError("No pending leave found to cancel")
-
-    def cancel_leave_for_date_range(self, from_date, to_date):
-        """Find and cancel a leave request within the selected date range."""
-        self.open_pending_leaves_page()
-        self.open_leave_filter_search()
-        self.fill_filter_date_range(from_date, to_date)
-        return self.cancel_first_pending_leave(reset_filters=False)
 
     def validate_cancelled_leave(self, leave_id):
         """Assert the cancelled leave shows the expected status."""
@@ -300,7 +275,8 @@ class LeavePage(BasePage):
 
     def validate_pending_leave_submission(self, leave_ctx):
         """Validate the submitted leave row matches the stored request details."""
-        self.page.wait_for_load_state("networkidle")
+        self.page.wait_for_url("**/index.php/pendingleaves")
+
         grid = self.page.locator("#pendingleaves").first
         grid.wait_for(state="visible")
 
